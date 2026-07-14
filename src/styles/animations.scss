@@ -1,0 +1,215 @@
+/* -------------------------------------------------------------------------- */
+/* Keyframes & animation utility classes                                      */
+/* -------------------------------------------------------------------------- */
+
+@keyframes dataCascade {
+  0% {
+    opacity: 0;
+    transform: translateY(-120vh) skewX(-12deg);
+  }
+
+  8%,
+  88% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(120vh) skewX(-12deg);
+  }
+}
+
+@keyframes dataCascadeSlow {
+  0% {
+    opacity: 0;
+    transform: translateY(-130vh) skewX(-8deg);
+  }
+
+  10%,
+  90% {
+    opacity: 0.65;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(130vh) skewX(-8deg);
+  }
+}
+
+@keyframes enhancedScanline {
+  0%,
+  100% {
+    opacity: 0.16;
+    transform: scaleX(0.8);
+  }
+
+  50% {
+    opacity: 0.48;
+    transform: scaleX(1.2);
+  }
+}
+
+@keyframes deepGridWave {
+  0%,
+  100% {
+    transform: perspective(2000px) rotateX(0deg) rotateY(0deg);
+  }
+
+  50% {
+    transform: perspective(2000px) rotateX(2deg) rotateY(-2deg);
+  }
+}
+
+@keyframes midGridWave {
+  0%,
+  100% {
+    transform: perspective(1500px) rotateX(0deg) rotateY(0deg);
+  }
+
+  50% {
+    transform: perspective(1500px) rotateX(-1deg) rotateY(1deg);
+  }
+}
+
+@keyframes enhancedPulse {
+  0%,
+  100% {
+    opacity: 0.82;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes randomGlitch {
+  0%,
+  84%,
+  100% {
+    opacity: 0;
+    transform: translateX(0) scaleX(1);
+  }
+
+  86%,
+  88%,
+  92% {
+    opacity: 0.78;
+    transform: translateX(-8px) scaleX(1.1);
+  }
+
+  87%,
+  90% {
+    opacity: 0.62;
+    transform: translateX(10px) scaleX(0.88);
+  }
+}
+
+/* Keyframes required by the CyberpunkBackground animation layer */
+@keyframes gridWave {
+  0%,
+  100% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+
+  25% {
+    transform: perspective(1000px) rotateX(2deg) rotateY(1deg);
+  }
+
+  50% {
+    transform: perspective(1000px) rotateX(0deg) rotateY(-1deg);
+  }
+
+  75% {
+    transform: perspective(1000px) rotateX(-2deg) rotateY(0deg);
+  }
+}
+
+@keyframes distortionWave {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) scaleY(0.5);
+  }
+
+  20% {
+    opacity: 0.8;
+    transform: translateX(-50%) scaleY(1.2);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(0%) scaleY(1);
+  }
+
+  80% {
+    opacity: 0.6;
+    transform: translateX(50%) scaleY(0.8);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100%) scaleY(0.3);
+  }
+}
+
+/* Centered glow pulse — keeps its translate offset while pulsing */
+@keyframes enhancedPulseGlow {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+
+  25% {
+    opacity: 0.15;
+    transform: translate(-50%, -50%) scale(1.1) rotate(0.5deg);
+  }
+
+  50% {
+    opacity: 0.08;
+    transform: translate(-50%, -50%) scale(1.3) rotate(0deg);
+  }
+
+  75% {
+    opacity: 0.12;
+    transform: translate(-50%, -50%) scale(1.15) rotate(-0.5deg);
+  }
+}
+
+/* Animation classes consumed by CyberpunkBackground DOM layers */
+.deep-grid-animation {
+  animation: deepGridWave 8s ease-in-out infinite;
+}
+
+.mid-grid-animation {
+  animation: midGridWave 6s ease-in-out infinite;
+}
+
+.grid-wave-animation {
+  animation: gridWave 4s ease-in-out infinite;
+}
+
+.data-cascade-animation {
+  animation: dataCascade linear infinite;
+}
+
+.data-cascade-slow-animation {
+  animation: dataCascadeSlow linear infinite;
+}
+
+.distortion-wave-animation {
+  animation: distortionWave ease-in-out infinite;
+}
+
+.enhanced-scanline-animation {
+  animation: enhancedScanline ease-in-out infinite;
+}
+
+.enhanced-pulse-animation {
+  animation: enhancedPulseGlow 4s ease-in-out infinite;
+}
+
+.random-glitch-animation {
+  animation: randomGlitch ease-in-out infinite;
+}
