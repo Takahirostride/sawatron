@@ -290,7 +290,9 @@ export function CyberpunkBackground() {
                         style={{
                             left: `${(i * 1.5) % 100}%`,
                             top: '-10%',
-                            width: `${1 + Math.sin(i) * 0.5}px`,
+                            // toFixed keeps SSR and client output identical — Math.sin can differ
+                            // by 1 ULP across V8 builds, which otherwise triggers a hydration mismatch
+                            width: `${(1 + Math.sin(i) * 0.5).toFixed(2)}px`,
                             height: '110%',
                             background: `linear-gradient(to bottom, 
                 transparent 0%, 
