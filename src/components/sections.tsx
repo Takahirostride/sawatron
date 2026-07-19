@@ -316,7 +316,7 @@ export function ContactSection() {
         </form>
       </div>
       <div className="contact__image" aria-hidden="true">
-        <Image src="/assets/contact-racer.webp" alt="" fill sizes="70vw" />
+        <Image src="/assets/hero/gp-ciber-machine-dogfight.png" alt="" fill sizes="70vw" />
       </div>
     </section>
   );

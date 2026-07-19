@@ -374,8 +374,8 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
-  gap: 70px;
-  overflow: hidden;
+  gap: 0;
+  overflow: clip;
   min-height: auto;
   padding-block: 0;
   padding-inline: 22px;
