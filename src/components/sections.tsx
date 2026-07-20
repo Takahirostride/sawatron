@@ -1,7 +1,9 @@
 import Image from "next/image";
-import { ArrowUpRight, Mail, RadioTower } from "lucide-react";
+import { Mail, RadioTower } from "lucide-react";
 import type { PortfolioPost } from "@/lib/wordpress";
+import type { WorkDetail } from "@/lib/work-details";
 import { CyberpunkBackground } from "@/app/cyber-punk-background";
+import { WorkDetailModal } from "@/components/work-detail-modal";
 
 const navItems = [
   { label: "ABOUT", href: "#about" },
@@ -105,7 +107,7 @@ export function HeroSection() {
       {/* Hero centerpiece — bg-anim < machine < brand/nav */}
       <div className="hero__machine" aria-hidden="true">
         <Image
-          src="/assets/hero/gp-ciber-machine-stream.png"
+          src="/assets/hero/gp-ciber-machine-stream.webp"
           alt=""
           fill
           sizes="(max-width: 760px) 118vw, 74vw"
@@ -211,41 +213,11 @@ export function SkillsSection() {
   );
 }
 
-export function WorksSection({ posts }: { posts: PortfolioPost[] }) {
+export function WorksSection({ posts, details }: { posts: PortfolioPost[]; details: WorkDetail[] }) {
   return (
     <section className="works dark-section" id="works">
       <SectionCode value="// 02. WORKS" />
-      <div className="works__rail">
-        {posts.slice(0, 2).map((post) => (
-          <article className="work-card" key={post.id}>
-            <div className="work-card__image">
-              {post.image ? (
-                <Image
-                  src={post.image}
-                  alt=""
-                  fill
-                  sizes="(max-width: 760px) 86vw, 460px"
-                  unoptimized={!post.image.startsWith("/")}
-                />
-              ) : null}
-            </div>
-            <div className="work-card__content">
-              <h2>{post.title}</h2>
-              <time>{post.date}</time>
-              <p>{post.excerpt}</p>
-              <div className="work-card__tags">
-                {post.tags.slice(0, 6).map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div>
-              <a href="#" aria-label={`${post.title} の詳細`}>
-                <ArrowUpRight size={16} />
-                詳細
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
+      <WorkDetailModal posts={posts} details={details} />
     </section>
   );
 }
@@ -253,12 +225,15 @@ export function WorksSection({ posts }: { posts: PortfolioPost[] }) {
 export function CharacterSection() {
   return (
     <section className="character dark-section" id="experience">
-      <div className="character__figure" aria-hidden="true">
-        <div className="character__halo" />
-        <div className="character__person" />
-      </div>
-
       <div className="character__stage character__stage--experience">
+        <Image
+          className="character__bg"
+          src="/assets/hero/ace-player.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          aria-hidden="true"
+        />
         <div className="experience-panel">
           <SectionCode value="// 03. EXPERIENCE_LOG" />
           {experience.map(([year, title, company]) => (
@@ -275,6 +250,14 @@ export function CharacterSection() {
       </div>
 
       <div className="character__stage character__stage--profile">
+        <Image
+          className="character__bg"
+          src="/assets/hero/ace-player-dark.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          aria-hidden="true"
+        />
         <div className="character-copy">
           <SectionCode value="// 04. CHARACTER" />
           <h2>HAYATO_HYAMI</h2>
@@ -316,7 +299,7 @@ export function ContactSection() {
         </form>
       </div>
       <div className="contact__image" aria-hidden="true">
-        <Image src="/assets/hero/gp-ciber-machine-dogfight.png" alt="" fill sizes="70vw" />
+        <Image src="/assets/hero/gp-ciber-machine-dogfight.webp" alt="" fill sizes="70vw" />
       </div>
     </section>
   );

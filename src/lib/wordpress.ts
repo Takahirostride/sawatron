@@ -1,5 +1,6 @@
 export type PortfolioPost = {
   id: number;
+  slug: string;
   title: string;
   date: string;
   excerpt: string;
@@ -10,15 +11,17 @@ export type PortfolioPost = {
 const fallbackPosts: PortfolioPost[] = [
   {
     id: 1,
+    slug: "dual-platform-renewal",
     title: "双系プラットフォームリニューアル",
     date: "2026.03",
     excerpt:
       "UI/UX、Laravel、Next.js を横断して運用基盤を再設計。高負荷な記事更新とキャンペーン配信に耐える情報設計へ刷新。",
     tags: ["要件定義", "UI設計", "Next.js", "Laravel", "Vercel"],
-    image: "/assets/contact-racer.webp",
+    image: "/assets/hero-racer.webp",
   },
   {
     id: 2,
+    slug: "realtime-article-delivery",
     title: "リアルタイム記事配信基盤",
     date: "2025.11",
     excerpt:
@@ -30,6 +33,7 @@ const fallbackPosts: PortfolioPost[] = [
 
 type WordPressPost = {
   id: number;
+  slug?: string;
   date?: string;
   title?: { rendered?: string };
   excerpt?: { rendered?: string };
@@ -69,6 +73,7 @@ export async function getPortfolioPosts(): Promise<PortfolioPost[]> {
 
     return posts.map((post) => ({
       id: post.id,
+      slug: post.slug || String(post.id),
       title: stripHtml(post.title?.rendered) || "UNTITLED_TRANSMISSION",
       date: post.date ? post.date.slice(0, 10).replaceAll("-", ".") : "LIVE",
       excerpt: stripHtml(post.excerpt?.rendered),
