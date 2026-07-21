@@ -14,6 +14,11 @@ export type WorkDetail = {
   team: string;
   cover: string;
   stacks: string[];
+  cardDate: string;
+  cardExcerpt: string;
+  cardTags: string[];
+  cardImage: string;
+  order: number;
   blocks: MarkdownBlock[];
 };
 
@@ -112,10 +117,18 @@ export async function getWorkDetails(): Promise<WorkDetail[]> {
           .split(",")
           .map((stack) => stack.trim())
           .filter(Boolean),
+        cardDate: readMeta(meta, "cardDate", readMeta(meta, "period", "LIVE")),
+        cardExcerpt: readMeta(meta, "cardExcerpt"),
+        cardTags: readMeta(meta, "cardTags", readMeta(meta, "stacks"))
+          .split(",")
+          .map((tag) => tag.trim())
+          .filter(Boolean),
+        cardImage: readMeta(meta, "cardImage", readMeta(meta, "cover", "/assets/hero-car.webp")),
+        order: Number(readMeta(meta, "order", "999")),
         blocks: parseMarkdownBlocks(body),
       } satisfies WorkDetail;
     }),
   );
 
-  return details.sort((a, b) => a.slug.localeCompare(b.slug));
+  return details.sort((a, b) => a.order - b.order || a.slug.localeCompare(b.slug));
 }

@@ -4,14 +4,12 @@ import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 import { ArrowUpRight, X } from "lucide-react";
-import type { PortfolioPost } from "@/lib/wordpress";
 import type { MarkdownBlock, WorkDetail } from "@/lib/work-details";
 
 const modalBackground = "/assets/hero/gp-ciber-machine-dogfight-mini.png";
 
 type WorkDetailModalProps = {
-  posts: PortfolioPost[];
-  details: WorkDetail[];
+  works: WorkDetail[];
 };
 
 function DetailBlocks({ blocks }: { blocks: MarkdownBlock[] }) {
@@ -38,11 +36,11 @@ function DetailBlocks({ blocks }: { blocks: MarkdownBlock[] }) {
   );
 }
 
-export function WorkDetailModal({ posts, details }: WorkDetailModalProps) {
+export function WorkDetailModal({ works }: WorkDetailModalProps) {
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
   const activeDetail = useMemo(
-    () => details.find((detail) => detail.slug === activeSlug) ?? null,
-    [activeSlug, details],
+    () => works.find((detail) => detail.slug === activeSlug) ?? null,
+    [activeSlug, works],
   );
 
   useEffect(() => {
@@ -127,37 +125,34 @@ export function WorkDetailModal({ posts, details }: WorkDetailModalProps) {
   return (
     <>
       <div className="works__rail">
-        {posts.slice(0, 2).map((post) => {
-          const hasDetail = details.some((detail) => detail.slug === post.slug);
-
+        {works.slice(0, 2).map((work) => {
           return (
-            <article className="work-card" key={post.id}>
+            <article className="work-card" key={work.slug}>
               <div className="work-card__image">
-                {post.image ? (
+                {work.cardImage ? (
                   <Image
-                    src={post.image}
+                    src={work.cardImage}
                     alt=""
                     fill
                     sizes="(max-width: 760px) 86vw, 460px"
-                    unoptimized={!post.image.startsWith("/")}
+                    unoptimized={!work.cardImage.startsWith("/")}
                   />
                 ) : null}
               </div>
               <div className="work-card__content">
-                <h2>{post.title}</h2>
-                <time>{post.date}</time>
-                <p>{post.excerpt}</p>
+                <h2>{work.title}</h2>
+                <time>{work.cardDate}</time>
+                <p>{work.cardExcerpt}</p>
                 <div className="work-card__tags">
-                  {post.tags.slice(0, 6).map((tag) => (
+                  {work.cardTags.slice(0, 6).map((tag) => (
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
                 <button
                   type="button"
-                  aria-label={`${post.title} の詳細`}
+                  aria-label={`${work.title} の詳細`}
                   aria-haspopup="dialog"
-                  disabled={!hasDetail}
-                  onClick={() => setActiveSlug(post.slug)}
+                  onClick={() => setActiveSlug(work.slug)}
                 >
                   <ArrowUpRight size={16} />
                   詳細

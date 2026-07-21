@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Mail, RadioTower } from "lucide-react";
-import type { PortfolioPost } from "@/lib/wordpress";
+import type { PortfolioContent } from "@/lib/portfolio";
+import { textLines } from "@/lib/portfolio";
 import type { WorkDetail } from "@/lib/work-details";
 import { CyberpunkBackground } from "@/app/cyber-punk-background";
 import { WorkDetailModal } from "@/components/work-detail-modal";
@@ -10,47 +11,6 @@ const navItems = [
   { label: "WORKS", href: "#works" },
   { label: "EXP_LOG", href: "#experience" },
   { label: "CONTACT", href: "#contact" },
-];
-
-const services = [
-  {
-    title: "PROJECT MANAGER",
-    body: "要件定義・進行管理・品質設計を横断し、Webサービスの実装と運用を同じテーブルで設計します。",
-  },
-  {
-    title: "WEB ENGINEERING",
-    body: "Next.js、Laravel、WordPress REST API を中心に、編集体験と表示速度を両立する実装を組みます。",
-  },
-  {
-    title: "UI/UX DESIGN",
-    body: "情報設計、導線、コンポーネント粒度を整理し、ユーザーが迷わないプロダクト体験へ落とし込みます。",
-  },
-  {
-    title: "WEB DIRECTION",
-    body: "事業目標、コンテンツ運用、SEO、保守性を接続し、長期運用できる制作フローを設計します。",
-  },
-];
-
-const skills = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Tailwind CSS",
-  "SCSS",
-  "WordPress",
-  "REST API",
-  "Vercel",
-  "Laravel",
-  "UI Design",
-  "SEO",
-  "Performance",
-];
-
-const experience = [
-  ["2026", "SENIOR SYSTEMS ARCHITECT", "SAWATRON LAB"],
-  ["2024", "PRINCIPAL ENGINEER", "JUNKTIONS"],
-  ["2022", "WEB DIRECTOR", "CREATIVE OPS"],
-  ["2020", "SYSTEMS ENGINEER", "GRID SYSTEMS"],
 ];
 
 export function HeroSection() {
@@ -147,63 +107,60 @@ export function HeroSection() {
   );
 }
 
-export function AboutSection() {
+export function AboutSection({ content }: { content: PortfolioContent["about"] }) {
   return (
     <section className="about light-section" id="about">
-      <SectionCode value="// 01. WHO" dark={false} />
+      <SectionCode value={content.sectionCode} dark={false} />
       <div className="section-heading section-heading--light">
         <h1>
-          WHO AM I<span>?</span>
+          {content.heading.text}
+          <span>{content.heading.accent}</span>
         </h1>
         <div className="avatar-orbit" aria-hidden="true" />
       </div>
 
       <div className="about__grid">
         <div className="about__cards">
-          {services.map((service) => (
+          {content.services.map((service) => (
             <article className="info-card" key={service.title}>
               <div className="info-card__head">
                 <h2>{service.title}</h2>
-                <span>12 year</span>
+                <span>{service.parameter}</span>
               </div>
-              <p>{service.body}</p>
+              <p>{textLines(service.body)}</p>
             </article>
           ))}
         </div>
 
         <div className="metric-panel">
-          {["SYSTEMS ENGINEERING", "INTERACTION SYSTEMS", "FRONTEND ENGINEERING", "COPYWRITING", "BRAND DESIGN", "DATA DIRECTION"].map(
-            (label, index) => (
-              <div className="metric" key={label}>
-                <span>{label}</span>
-                <i style={{ inlineSize: `${92 - index * 6}%` }} />
-              </div>
-            ),
-          )}
+          {content.metrics.map((metric) => (
+            <div className="metric" key={metric.label}>
+              <span>{metric.label}</span>
+              <i style={{ inlineSize: `${metric.value}%` }} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-export function SkillsSection() {
+export function SkillsSection({ content }: { content: PortfolioContent["skills"] }) {
   return (
     <section className="skills light-section">
       <div className="section-heading section-heading--light">
         <h2>
-          SKILL<span>S</span>
+          {content.heading.text}
+          <span>{content.heading.accent}</span>
         </h2>
         <div className="avatar-orbit" aria-hidden="true" />
       </div>
       <div className="skills__body">
-        <p>
-          事業要件・UI/UX・実装を横断し、Webサービスの立ち上げと改善に必要なレイヤーを一気通貫で扱います。
-          表示速度、運用性、保守性、デザイン品質を同時に詰めるための技術選定と設計を重視しています。
-        </p>
+        <p>{textLines(content.description)}</p>
         <div className="skill-bank">
-          <span>TECH STACK</span>
+          <span>{content.bankLabel}</span>
           <div>
-            {skills.map((skill) => (
+            {content.tags.map((skill) => (
               <b key={skill}>{skill}</b>
             ))}
           </div>
@@ -213,16 +170,16 @@ export function SkillsSection() {
   );
 }
 
-export function WorksSection({ posts, details }: { posts: PortfolioPost[]; details: WorkDetail[] }) {
+export function WorksSection({ works }: { works: WorkDetail[] }) {
   return (
     <section className="works dark-section" id="works">
       <SectionCode value="// 02. WORKS" />
-      <WorkDetailModal posts={posts} details={details} />
+      <WorkDetailModal works={works} />
     </section>
   );
 }
 
-export function CharacterSection() {
+export function CharacterSection({ content }: { content: PortfolioContent["experience"] }) {
   return (
     <section className="character dark-section" id="experience">
       <div className="character__stage character__stage--experience">
@@ -235,14 +192,14 @@ export function CharacterSection() {
           aria-hidden="true"
         />
         <div className="experience-panel">
-          <SectionCode value="// 03. EXPERIENCE_LOG" />
-          {experience.map(([year, title, company]) => (
-            <article className="experience-item" key={`${year}-${title}`}>
-              <time>{year}</time>
+          <SectionCode value={content.log.sectionCode} />
+          {content.log.items.map((item) => (
+            <article className="experience-item" key={`${item.year}-${item.title}`}>
+              <time>{item.year}</time>
               <div>
-                <h2>{title}</h2>
-                <span>{company}</span>
-                <p>High-density digital product development and operations architecture.</p>
+                <h2>{item.title}</h2>
+                <span>{item.company}</span>
+                <p>{textLines(item.body)}</p>
               </div>
             </article>
           ))}
@@ -259,12 +216,9 @@ export function CharacterSection() {
           aria-hidden="true"
         />
         <div className="character-copy">
-          <SectionCode value="// 04. CHARACTER" />
-          <h2>HAYATO_HYAMI</h2>
-          <p>
-            Fast-moving digital products need design, engineering, content operations, and deployment to move as one system.
-            I connect those layers and build interfaces that can keep shipping after release.
-          </p>
+          <SectionCode value={content.profile.sectionCode} />
+          <h2>{content.profile.name}</h2>
+          <p>{textLines(content.profile.body)}</p>
         </div>
       </div>
     </section>

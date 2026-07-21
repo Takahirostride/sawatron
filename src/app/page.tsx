@@ -7,22 +7,22 @@ import {
   SkillsSection,
   WorksSection,
 } from "@/components/sections";
+import { getPortfolioContent } from "@/lib/portfolio";
 import { getWorkDetails } from "@/lib/work-details";
-import { getPortfolioPosts } from "@/lib/wordpress";
 
 export default async function Home() {
-  const [posts, workDetails] = await Promise.all([
-    getPortfolioPosts(),
+  const [portfolio, workDetails] = await Promise.all([
+    getPortfolioContent(),
     getWorkDetails(),
   ]);
 
   return (
     <main>
       <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <WorksSection posts={posts} details={workDetails} />
-      <CharacterSection />
+      <AboutSection content={portfolio.about} />
+      <SkillsSection content={portfolio.skills} />
+      <WorksSection works={workDetails} />
+      <CharacterSection content={portfolio.experience} />
       <ContactSection />
       <Footer />
     </main>

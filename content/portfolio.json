@@ -1,0 +1,115 @@
+{
+  "about": {
+    "sectionCode": "// 01. WHO",
+    "heading": {
+      "text": "WHO AM I",
+      "accent": "?"
+    },
+    "services": [
+      {
+        "title": "PROJECT MANAGER",
+        "parameter": "12 year",
+        "body": [
+          "要件定義・進行管理・品質設計を横断し、",
+          "Webサービスの実装と運用を同じテーブルで設計します。"
+        ]
+      },
+      {
+        "title": "WEB ENGINEERING",
+        "parameter": "12 year",
+        "body": [
+          "Next.js、Laravel、WordPress REST API を中心に、",
+          "編集体験と表示速度を両立する実装を組みます。"
+        ]
+      },
+      {
+        "title": "UI/UX DESIGN",
+        "parameter": "12 year",
+        "body": [
+          "情報設計、導線、コンポーネント粒度を整理し、",
+          "ユーザーが迷わないプロダクト体験へ落とし込みます。"
+        ]
+      },
+      {
+        "title": "WEB DIRECTION",
+        "parameter": "12 year",
+        "body": [
+          "事業目標、コンテンツ運用、SEO、保守性を接続し、",
+          "長期運用できる制作フローを設計します。"
+        ]
+      }
+    ],
+    "metrics": [
+      { "label": "SYSTEMS ENGINEERING", "value": 92 },
+      { "label": "INTERACTION SYSTEMS", "value": 86 },
+      { "label": "FRONTEND ENGINEERING", "value": 80 },
+      { "label": "COPYWRITING", "value": 74 },
+      { "label": "BRAND DESIGN", "value": 68 },
+      { "label": "DATA DIRECTION", "value": 62 }
+    ]
+  },
+  "skills": {
+    "heading": {
+      "text": "SKILL",
+      "accent": "S"
+    },
+    "description": [
+      "事業要件・UI/UX・実装を横断し、Webサービスの立ち上げと改善に必要なレイヤーを一気通貫で扱います。",
+      "表示速度、運用性、保守性、デザイン品質を同時に詰めるための技術選定と設計を重視しています。"
+    ],
+    "bankLabel": "TECH STACK",
+    "tags": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "SCSS",
+      "WordPress",
+      "REST API",
+      "Vercel",
+      "Laravel",
+      "UI Design",
+      "SEO",
+      "Performance"
+    ]
+  },
+  "experience": {
+    "log": {
+      "sectionCode": "// 03. EXPERIENCE_LOG",
+      "items": [
+        {
+          "year": "2026",
+          "title": "SENIOR SYSTEMS ARCHITECT",
+          "company": "SAWATRON LAB",
+          "body": "High-density digital product development and operations architecture."
+        },
+        {
+          "year": "2024",
+          "title": "PRINCIPAL ENGINEER",
+          "company": "JUNKTIONS",
+          "body": "High-density digital product development and operations architecture."
+        },
+        {
+          "year": "2022",
+          "title": "WEB DIRECTOR",
+          "company": "CREATIVE OPS",
+          "body": "High-density digital product development and operations architecture."
+        },
+        {
+          "year": "2020",
+          "title": "SYSTEMS ENGINEER",
+          "company": "GRID SYSTEMS",
+          "body": "High-density digital product development and operations architecture."
+        }
+      ]
+    },
+    "profile": {
+      "sectionCode": "// 04. CHARACTER",
+      "name": "HAYATO_HYAMI",
+      "body": [
+        "Fast-moving digital products need design, engineering, content operations, and deployment to move as one system.",
+        "I connect those layers and build interfaces that can keep shipping after release."
+      ]
+    }
+  }
+}
