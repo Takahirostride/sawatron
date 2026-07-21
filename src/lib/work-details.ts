@@ -18,6 +18,7 @@ export type WorkDetail = {
   cardExcerpt: string;
   cardTags: string[];
   cardImage: string;
+  thumbnail: string;
   order: number;
   blocks: MarkdownBlock[];
 };
@@ -124,6 +125,11 @@ export async function getWorkDetails(): Promise<WorkDetail[]> {
           .map((tag) => tag.trim())
           .filter(Boolean),
         cardImage: readMeta(meta, "cardImage", readMeta(meta, "cover", "/assets/hero-car.webp")),
+        thumbnail: readMeta(
+          meta,
+          "thumbnail",
+          readMeta(meta, "cardImage", readMeta(meta, "cover", "/assets/hero-car.webp")),
+        ),
         order: Number(readMeta(meta, "order", "999")),
         blocks: parseMarkdownBlocks(body),
       } satisfies WorkDetail;

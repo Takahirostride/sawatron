@@ -1,12 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { ArrowUpRight, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, X } from "lucide-react";
 import type { MarkdownBlock, WorkDetail } from "@/lib/work-details";
 
 const modalBackground = "/assets/hero/gp-ciber-machine-dogfight-mini.png";
+const desktopPageSize = 2;
+const mobilePageSize = 3;
 
 type WorkDetailModalProps = {
   works: WorkDetail[];
@@ -38,10 +40,84 @@ function DetailBlocks({ blocks }: { blocks: MarkdownBlock[] }) {
 
 export function WorkDetailModal({ works }: WorkDetailModalProps) {
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
+  const [desktopPage, setDesktopPage] = useState(0);
+  const [mobilePage, setMobilePage] = useState(0);
+  const desktopViewportRef = useRef<HTMLDivElement>(null);
+  const isProgrammaticScrollRef = useRef(false);
+  const scrollEndTimerRef = useRef<number | null>(null);
+  const shouldScrollToWorksRef = useRef(false);
   const activeDetail = useMemo(
     () => works.find((detail) => detail.slug === activeSlug) ?? null,
     [activeSlug, works],
   );
+  const desktopPageCount = Math.max(1, Math.ceil(works.length / desktopPageSize));
+  const pageCount = Math.max(1, Math.ceil(works.length / mobilePageSize));
+  const mobileWorks = works.slice(
+    mobilePage * mobilePageSize,
+    mobilePage * mobilePageSize + mobilePageSize,
+  );
+
+  const scrollDesktopPage = (nextPage: number) => {
+    const viewport = desktopViewportRef.current;
+    if (!viewport) return;
+
+    const rail = viewport.querySelector<HTMLElement>(".works__rail");
+    const cards = Array.from(viewport.querySelectorAll<HTMLElement>(".work-card"));
+    if (!rail || !cards.length) return;
+
+    const page = Math.min(Math.max(nextPage, 0), desktopPageCount - 1);
+    const index = Math.min(page * desktopPageSize, cards.length - 1);
+    const viewportInset = (viewport.clientWidth - (cards[0].offsetWidth * desktopPageSize + Number.parseFloat(getComputedStyle(rail).columnGap || "0"))) / 2;
+    const left = Math.max(0, cards[index].offsetLeft - Math.max(0, viewportInset));
+
+    setDesktopPage(page);
+    isProgrammaticScrollRef.current = true;
+    if (scrollEndTimerRef.current) {
+      window.clearTimeout(scrollEndTimerRef.current);
+    }
+    viewport.scrollTo({ left, behavior: "smooth" });
+  };
+
+  const syncDesktopPage = () => {
+    const viewport = desktopViewportRef.current;
+    if (!viewport) return;
+
+    if (isProgrammaticScrollRef.current) {
+      if (scrollEndTimerRef.current) {
+        window.clearTimeout(scrollEndTimerRef.current);
+      }
+      scrollEndTimerRef.current = window.setTimeout(() => {
+        isProgrammaticScrollRef.current = false;
+      }, 180);
+      return;
+    }
+
+    const rail = viewport.querySelector<HTMLElement>(".works__rail");
+    const card = viewport.querySelector<HTMLElement>(".work-card");
+    if (!rail || !card) return;
+
+    const gap = Number.parseFloat(getComputedStyle(rail).columnGap || "0");
+    const pageWidth = desktopPageSize * (card.offsetWidth + gap);
+    if (!pageWidth) return;
+
+    setDesktopPage(Math.min(desktopPageCount - 1, Math.max(0, Math.round(viewport.scrollLeft / pageWidth))));
+  };
+
+  const setMobilePageAndScroll = (nextPage: number) => {
+    shouldScrollToWorksRef.current = true;
+    setMobilePage(Math.min(pageCount - 1, Math.max(0, nextPage)));
+  };
+
+  useEffect(() => {
+    if (!shouldScrollToWorksRef.current) return;
+
+    shouldScrollToWorksRef.current = false;
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        document.getElementById("works")?.scrollIntoView({ block: "start", behavior: "auto" });
+      });
+    });
+  }, [mobilePage]);
 
   useEffect(() => {
     if (!activeDetail) return;
@@ -124,46 +200,107 @@ export function WorkDetailModal({ works }: WorkDetailModalProps) {
 
   return (
     <>
-      <div className="works__rail">
-        {works.slice(0, 2).map((work) => {
-          return (
-            <article className="work-card" key={work.slug}>
-              <div className="work-card__image">
-                {work.cardImage ? (
-                  <Image
-                    src={work.cardImage}
-                    alt=""
-                    fill
-                    sizes="(max-width: 760px) 86vw, 460px"
-                    unoptimized={!work.cardImage.startsWith("/")}
-                  />
-                ) : null}
-              </div>
-              <div className="work-card__content">
-                <h2>{work.title}</h2>
-                <time>{work.cardDate}</time>
-                <p>{work.cardExcerpt}</p>
-                <div className="work-card__tags">
-                  {work.cardTags.slice(0, 6).map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                </div>
-                <button
-                  type="button"
-                  aria-label={`${work.title} の詳細`}
-                  aria-haspopup="dialog"
-                  onClick={() => setActiveSlug(work.slug)}
-                >
-                  <ArrowUpRight size={16} />
-                  詳細
-                </button>
-              </div>
-            </article>
-          );
-        })}
+      <div
+        className="works__viewport works__viewport--desktop"
+        ref={desktopViewportRef}
+        onScroll={syncDesktopPage}
+      >
+        <div className="works__rail" aria-label="Works list">
+          {works.map((work) => (
+            <WorkCard key={work.slug} work={work} onOpen={() => setActiveSlug(work.slug)} />
+          ))}
+        </div>
+      </div>
+      {desktopPageCount > 1 ? (
+        <div className="works__pager works__pager--desktop" aria-label="Works pagination">
+          <button
+            type="button"
+            aria-label="前のWORKSを表示"
+            disabled={desktopPage === 0}
+            onClick={() => scrollDesktopPage(desktopPage - 1)}
+          >
+            <ArrowLeft size={16} />
+          </button>
+          <span>
+            {desktopPage + 1} / {desktopPageCount}
+          </span>
+          <button
+            type="button"
+            aria-label="次のWORKSを表示"
+            disabled={desktopPage >= desktopPageCount - 1}
+            onClick={() => scrollDesktopPage(desktopPage + 1)}
+          >
+            <ArrowRight size={16} />
+          </button>
+        </div>
+      ) : null}
+
+      <div className="works__viewport works__viewport--mobile">
+        <div className="works__rail" aria-label="Works list">
+          {mobileWorks.map((work) => (
+            <WorkCard key={work.slug} work={work} onOpen={() => setActiveSlug(work.slug)} />
+          ))}
+        </div>
+        {pageCount > 1 ? (
+          <div className="works__pager works__pager--mobile" aria-label="Works pagination">
+            <button
+              type="button"
+              aria-label="前のWORKSを表示"
+              disabled={mobilePage === 0}
+              onClick={() => setMobilePageAndScroll(mobilePage - 1)}
+            >
+              <ArrowLeft size={16} />
+            </button>
+            <span>
+              {mobilePage + 1} / {pageCount}
+            </span>
+            <button
+              type="button"
+              aria-label="次のWORKSを表示"
+              disabled={mobilePage >= pageCount - 1}
+              onClick={() => setMobilePageAndScroll(mobilePage + 1)}
+            >
+              <ArrowRight size={16} />
+            </button>
+          </div>
+        ) : null}
       </div>
 
       {modal ? createPortal(modal, document.body) : null}
     </>
+  );
+}
+
+function WorkCard({ work, onOpen }: { work: WorkDetail; onOpen: () => void }) {
+  const thumbnail = work.thumbnail || work.cardImage;
+
+  return (
+    <article className="work-card">
+      <div className="work-card__image">
+        {thumbnail ? (
+          <Image
+            src={thumbnail}
+            alt=""
+            fill
+            sizes="(max-width: 760px) 86vw, 460px"
+            unoptimized={!thumbnail.startsWith("/")}
+          />
+        ) : null}
+      </div>
+      <div className="work-card__content">
+        <h2>{work.title}</h2>
+        <time>{work.cardDate}</time>
+        <p>{work.cardExcerpt}</p>
+        <div className="work-card__tags">
+          {work.cardTags.slice(0, 6).map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
+        <button type="button" aria-label={`${work.title} の詳細`} aria-haspopup="dialog" onClick={onOpen}>
+          <ArrowUpRight size={16} />
+          詳細
+        </button>
+      </div>
+    </article>
   );
 }

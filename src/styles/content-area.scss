@@ -549,17 +549,113 @@
     padding-inline: 10vw;
   }
 
-  &__rail {
+  &__viewport {
     position: relative;
     z-index: 1;
+    margin-top: 55px;
+
+    &--desktop {
+      display: none;
+    }
+  }
+
+  &__rail {
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
     gap: 42px;
-    margin-top: 55px;
+  }
 
-    @media (min-width: 761px) {
-      grid-template-columns: repeat(2, minmax(340px, 520px));
+  &__pager {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+    color: #dbe8ff;
+    font-family: var(--font-display-stack);
+
+    &--desktop {
+      display: none;
+    }
+
+    button {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid rgba(19, 232, 255, 0.66);
+      background: rgba(9, 18, 37, 0.86);
+      color: var(--cyan);
+      cursor: pointer;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.35;
+    }
+  }
+
+  @media (min-width: 761px) {
+    &__viewport {
+      width: min(100vw, 1180px);
+      margin-inline: auto;
+
+      &--desktop {
+        display: block;
+        overflow-x: auto;
+        overflow-y: visible;
+        padding: 0 0 18px;
+        scroll-padding-inline: 0;
+        scrollbar-color: rgba(19, 232, 255, 0.55) rgba(10, 18, 39, 0.26);
+        scrollbar-width: thin;
+
+        &::before,
+        &::after {
+          position: absolute;
+          top: 0;
+          bottom: 18px;
+          z-index: 2;
+          width: min(9vw, 110px);
+          content: "";
+          pointer-events: none;
+        }
+
+        &::before {
+          left: 0;
+          background: linear-gradient(90deg, rgba(5, 10, 24, 0.96), rgba(5, 10, 24, 0));
+        }
+
+        &::after {
+          right: 0;
+          background: linear-gradient(270deg, rgba(5, 10, 24, 0.96), rgba(5, 10, 24, 0));
+        }
+      }
+
+      &--mobile {
+        display: none;
+      }
+    }
+
+    &__pager {
+      &--desktop {
+        display: flex;
+      }
+
+      &--mobile {
+        display: none;
+      }
+    }
+
+    &__rail {
+      width: max-content;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(340px, 520px);
+      grid-template-columns: none;
+      justify-content: start;
+      padding-inline: max(24px, calc((min(100vw, 1180px) - 1082px) / 2));
     }
   }
 }
@@ -571,6 +667,11 @@
   box-shadow: 0 0 34px rgba(19, 232, 255, 0.16);
   overflow: hidden;
 
+  @media (max-width: 760px) {
+    display: grid;
+    grid-template-columns: 118px minmax(0, 1fr);
+  }
+
   &__image {
     position: relative;
     height: 180px;
@@ -578,6 +679,13 @@
     border: 1px solid rgba(19, 232, 255, 0.28);
     background: linear-gradient(135deg, rgba(19, 232, 255, 0.18), rgba(255, 43, 214, 0.16));
     overflow: hidden;
+
+    @media (max-width: 760px) {
+      height: auto;
+      min-height: 100%;
+      margin: 0;
+      border-width: 0 1px 0 0;
+    }
 
     img {
       width: 100%;
@@ -588,6 +696,10 @@
 
   &__content {
     padding: 24px 28px 30px;
+
+    @media (max-width: 760px) {
+      padding: 14px 14px 16px;
+    }
   }
 
   h2 {
@@ -595,6 +707,12 @@
     font-family: var(--font-display-stack);
     font-size: 20px;
     text-align: center;
+
+    @media (max-width: 760px) {
+      margin-bottom: 6px;
+      font-size: 15px;
+      text-align: left;
+    }
   }
 
   time {
@@ -602,12 +720,27 @@
     margin-bottom: 16px;
     color: #c8d5ff;
     text-align: center;
+
+    @media (max-width: 760px) {
+      margin-bottom: 8px;
+      font-size: 12px;
+      text-align: left;
+    }
   }
 
   p {
     margin: 0;
     color: #c7d5ee;
     line-height: 1.7;
+
+    @media (max-width: 760px) {
+      display: -webkit-box;
+      overflow: hidden;
+      font-size: 12px;
+      line-height: 1.55;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
   }
 
   &__tags {
@@ -616,12 +749,22 @@
     gap: 8px;
     margin: 18px 0 24px;
 
+    @media (max-width: 760px) {
+      gap: 5px;
+      margin: 10px 0 12px;
+    }
+
     span {
       border-radius: 999px;
       padding: 4px 9px;
       background: rgba(122, 143, 210, 0.32);
       color: #eaf2ff;
       font-size: 12px;
+
+      @media (max-width: 760px) {
+        padding: 3px 7px;
+        font-size: 10px;
+      }
     }
   }
 
@@ -640,6 +783,11 @@
     font: inherit;
     font-weight: 700;
     cursor: pointer;
+
+    @media (max-width: 760px) {
+      min-height: 34px;
+      font-size: 12px;
+    }
   }
 
   button:disabled {

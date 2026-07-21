@@ -10,7 +10,7 @@ stacks: React, Three.js, WebGL, TensorFlow.js, TypeScript
 cardDate: 2026.03
 cardExcerpt: UI/UX、Laravel、Next.js を横断して運用基盤を再設計。高負荷な記事更新とキャンペーン配信に耐える情報設計へ刷新。
 cardTags: 要件定義, UI設計, Next.js, Laravel, Vercel
-cardImage: /assets/hero/gp-ciber-machine-dogfight-mini.png
+thumbnail: /assets/hero/gp-ciber-machine-dogfight-mini.png
 ---
 
 ## Project Details

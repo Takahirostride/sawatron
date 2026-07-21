@@ -10,7 +10,7 @@ stacks: WordPress, REST API, ISR, CMS, SEO
 cardDate: 2025.11
 cardExcerpt: WordPress REST API と ISR を組み合わせ、編集者の更新体験と表示速度を両立するコンテンツフローを構築。
 cardTags: WordPress, REST API, ISR, CMS, SEO
-cardImage: /assets/hero-car.webp
+thumbnail: /assets/hero-car.webp
 ---
 
 ## Project Details
