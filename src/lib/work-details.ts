@@ -4,7 +4,8 @@ import path from "node:path";
 export type MarkdownBlock =
   | { type: "heading"; text: string }
   | { type: "paragraph"; text: string }
-  | { type: "list"; items: string[] };
+  | { type: "list"; items: string[] }
+  | { type: "image"; src: string; alt: string; width?: number; height?: number };
 
 export type WorkDetail = {
   slug: string;
@@ -13,6 +14,7 @@ export type WorkDetail = {
   period: string;
   team: string;
   cover: string;
+  modalImage: string;
   stacks: string[];
   cardDate: string;
   cardExcerpt: string;
@@ -42,6 +44,13 @@ function parseFrontmatter(source: string) {
   }
 
   return { meta, body: match[2] };
+}
+
+function parseImageDimension(value: string | undefined) {
+  if (!value) return undefined;
+
+  const numericValue = Number(value.replace(/^["']|["']$/g, ""));
+  return Number.isFinite(numericValue) && numericValue > 0 ? numericValue : undefined;
 }
 
 function parseMarkdownBlocks(markdown: string): MarkdownBlock[] {
@@ -75,6 +84,28 @@ function parseMarkdownBlocks(markdown: string): MarkdownBlock[] {
       flushParagraph();
       flushList();
       blocks.push({ type: "heading", text: trimmed.replace(/^##\s+/, "") });
+      continue;
+    }
+
+    const imageMatch = trimmed.match(/^!\[([^\]]*)\]\(([^)]+)\)(?:\{([^}]+)\})?$/);
+    if (imageMatch) {
+      flushParagraph();
+      flushList();
+
+      const attrs = new Map(
+        (imageMatch[3] || "")
+          .split(/\s+/)
+          .map((attr) => attr.split("="))
+          .filter(([key, value]) => key && value) as Array<[string, string]>,
+      );
+
+      blocks.push({
+        type: "image",
+        alt: imageMatch[1],
+        src: imageMatch[2],
+        width: parseImageDimension(attrs.get("width")),
+        height: parseImageDimension(attrs.get("height")),
+      });
       continue;
     }
 
@@ -114,6 +145,11 @@ export async function getWorkDetails(): Promise<WorkDetail[]> {
         period: readMeta(meta, "period", "LIVE"),
         team: readMeta(meta, "team", "1名体制"),
         cover: readMeta(meta, "cover", "/assets/hero/gp-ciber-machine-stream.webp"),
+        modalImage: readMeta(
+          meta,
+          "modalImage",
+          readMeta(meta, "cover", "/assets/hero/gp-ciber-machine-dogfight-mini.png"),
+        ),
         stacks: readMeta(meta, "stacks")
           .split(",")
           .map((stack) => stack.trim())

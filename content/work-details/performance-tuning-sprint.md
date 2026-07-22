@@ -6,6 +6,7 @@ category: Performance / Frontend
 period: 2024.12
 team: Frontend / QA
 cover: /assets/hero-car.webp
+modalImage: /assets/hero/gp-ciber-machine-dogfight-mini.png
 stacks: Core Web Vitals, Next.js, Image, Cache, QA
 cardDate: 2024.12
 cardExcerpt: 画像、キャッシュ、描画負荷を見直し、主要ページの体感速度とCore Web Vitalsを改善。

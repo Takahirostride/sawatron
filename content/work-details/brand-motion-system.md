@@ -6,6 +6,7 @@ category: UI Motion / Design System
 period: 2025.05
 team: UI / Frontend
 cover: /assets/hero-racer.webp
+modalImage: /assets/hero/gp-ciber-machine-dogfight-mini.png
 stacks: React, SCSS, Motion, Design System, Figma
 cardDate: 2025.05
 cardExcerpt: ブランドらしさをUIの動きへ展開。ボタン、カード、ナビゲーションのモーションルールを整備。

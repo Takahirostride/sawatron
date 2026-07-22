@@ -32,6 +32,30 @@ function DetailBlocks({ blocks }: { blocks: MarkdownBlock[] }) {
           );
         }
 
+        if (block.type === "image") {
+          const width = block.width && Number.isFinite(block.width) ? block.width : 320;
+          const height = block.height && Number.isFinite(block.height) ? block.height : 180;
+
+          return (
+            <figure
+              className="work-modal__inline-image"
+              key={`${block.type}-${index}`}
+              style={{ width, maxWidth: "100%" }}
+            >
+              <span className="work-modal__inline-image-frame" style={{ height }}>
+                <Image
+                  src={block.src}
+                  alt={block.alt}
+                  fill
+                  sizes={`(max-width: 760px) 82vw, ${width}px`}
+                  unoptimized={!block.src.startsWith("/")}
+                />
+              </span>
+              {block.alt ? <figcaption>{block.alt}</figcaption> : null}
+            </figure>
+          );
+        }
+
         return <p key={`${block.type}-${index}`}>{block.text}</p>;
       })}
     </>
@@ -154,10 +178,11 @@ export function WorkDetailModal({ works }: WorkDetailModalProps) {
       <article className="work-modal__panel">
         <Image
           className="work-modal__cover"
-          src={modalBackground}
+          src={activeDetail.modalImage || modalBackground}
           alt=""
           fill
           sizes="min(94vw, 1600px)"
+          unoptimized={Boolean(activeDetail.modalImage && !activeDetail.modalImage.startsWith("/"))}
         />
         <div className="work-modal__wash" />
         <button

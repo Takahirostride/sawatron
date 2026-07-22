@@ -6,6 +6,7 @@ category: WordPress REST API / ISR
 period: 2025.11
 team: Direction / Frontend / CMS
 cover: /assets/hero-car.webp
+modalImage: /assets/hero/gp-ciber-machine-dogfight-mini.png
 stacks: WordPress, REST API, ISR, CMS, SEO
 cardDate: 2025.11
 cardExcerpt: WordPress REST API と ISR を組み合わせ、編集者の更新体験と表示速度を両立するコンテンツフローを構築。

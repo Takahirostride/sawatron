@@ -6,6 +6,7 @@ category: WordPress / Preview
 period: 2025.02
 team: Direction / Frontend / CMS
 cover: /assets/hero/gp-ciber-machine-dogfight-mini.png
+modalImage: /assets/hero/gp-ciber-machine-dogfight-mini.png
 stacks: WordPress, REST API, Preview, Next.js, ISR
 cardDate: 2025.02
 cardExcerpt: WordPress入稿からNext.js表示までの確認導線を整え、公開前レビューと差し戻しをスムーズに改善。
