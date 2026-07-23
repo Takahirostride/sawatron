@@ -157,14 +157,14 @@ export function SkillsSection({ content }: { content: PortfolioContent["skills"]
       </div>
       <div className="skills__body">
         <p>{textLines(content.description)}</p>
-        <div className="skill-bank">
-          <span>{content.bankLabel}</span>
-          <div>
+        <dl className="skill-bank">
+          <dt>{content.bankLabel}</dt>
+          <dd>
             {content.tags.map((skill) => (
-              <b key={skill}>{skill}</b>
+              <span key={skill}>{skill}</span>
             ))}
-          </div>
-        </div>
+          </dd>
+        </dl>
       </div>
     </section>
   );
