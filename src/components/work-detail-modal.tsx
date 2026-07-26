@@ -67,6 +67,7 @@ export function WorkDetailModal({ works }: WorkDetailModalProps) {
   const [desktopPage, setDesktopPage] = useState(0);
   const [mobilePage, setMobilePage] = useState(0);
   const desktopViewportRef = useRef<HTMLDivElement>(null);
+  const interactiveRootRef = useRef<HTMLDivElement>(null);
   const isProgrammaticScrollRef = useRef(false);
   const scrollEndTimerRef = useRef<number | null>(null);
   const shouldScrollToWorksRef = useRef(false);
@@ -80,6 +81,10 @@ export function WorkDetailModal({ works }: WorkDetailModalProps) {
     mobilePage * mobilePageSize,
     mobilePage * mobilePageSize + mobilePageSize,
   );
+
+  useEffect(() => {
+    interactiveRootRef.current?.setAttribute("data-ready", "true");
+  }, []);
 
   const scrollDesktopPage = (nextPage: number) => {
     const viewport = desktopViewportRef.current;
@@ -224,7 +229,12 @@ export function WorkDetailModal({ works }: WorkDetailModalProps) {
   ) : null;
 
   return (
-    <>
+    <div
+      className="works__interactive"
+      ref={interactiveRootRef}
+      data-testid="works-interactive"
+      data-ready="false"
+    >
       <div
         className="works__viewport works__viewport--desktop"
         ref={desktopViewportRef}
@@ -292,7 +302,7 @@ export function WorkDetailModal({ works }: WorkDetailModalProps) {
       </div>
 
       {modal ? createPortal(modal, document.body) : null}
-    </>
+    </div>
   );
 }
 

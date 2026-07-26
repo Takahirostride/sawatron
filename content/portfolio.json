@@ -8,44 +8,58 @@
     "services": [
       {
         "title": "PROJECT MANAGER",
-        "parameter": "12 year",
+        "parameter": "3 year",
         "body": [
-          "要件定義・進行管理・品質設計を横断し、",
-          "Webサービスの実装と運用を同じテーブルで設計します。"
+          "AI駆動開発導入・運用 / ハイブリッド開発 / 開発技術スタック選定・要件定義 / 生成AIやAIエージェント活用 / 各種MCP利用 / SPA→SSR化対応 / VPSサーバー構築・セキュリティ対策 / サーバーレスデプロイ環境構築 / CICDパイプライン構築 / Docker・Git・Node.js開発環境導入 / コンテナ管理（WSL2 / Docker / DevContainer） / フレームワーク利用によるMVP設計 / CloudflareやViteによるパフォーマンスチューニング / コンバージョンの最適化PDCAサイクル / サーバー移管作業など技術的課題の解決と先導 / 実装・デザインレビュー / タスク管理・コスト管理 / 部下マネジメント / SEO対策（AIO施策）など外部説明会への積極的参加"
         ]
       },
       {
         "title": "WEB ENGINEERING",
         "parameter": "12 year",
         "body": [
-          "Next.js、Laravel、WordPress REST API を中心に、",
-          "編集体験と表示速度を両立する実装を組みます。"
+          "新規サイト立ち上げ・サービスのリニューアルやリプレイス / ヘッドレスCMSやBaaS導入・連携 / Jamstack構成 / デバッグ・コードリファクタリング / 単体テスト / 仕様書運用 / WebGLを利用したインタラクション / 動的データの連携（AJAX、DB連動、Rest API）/ レスポンシブデザイン・MFI / CSS設計 / テンプレートエンジン / SEO内部対策・改善施策 / Core Web Vitals（CLS）改善 / EFO（フォーム最適化） / CMS導入 / Marketo HTMLメール環境作成・運用・改善 / 常時HTTPS対応（Reverse Proxy連動）/ CORS対策 / SSL更新"
         ]
       },
       {
         "title": "UI/UX DESIGN",
         "parameter": "12 year",
         "body": [
-          "情報設計、導線、コンポーネント粒度を整理し、",
-          "ユーザーが迷わないプロダクト体験へ落とし込みます。"
+          "IA設計 / ワイヤーフレーム・プロトタイピング・モック作成 / ユーザーペルソナ / スタイルガイド作成 / デザインコンポーネント設計 / 成果物管理 / Webサイトデザイン・Webアプリデザイン・UIUXデザイン・グラフィックデザイン / バナー・OGP作成 / CV改善 / UIUX改善提案 / 画像レタッチ・画像素材生成 / UIUX講義用プレゼン資料作成"
         ]
       },
       {
         "title": "WEB DIRECTION",
-        "parameter": "12 year",
+        "parameter": "6 year",
         "body": [
-          "事業目標、コンテンツ運用、SEO、保守性を接続し、",
-          "長期運用できる制作フローを設計します。"
+          "プロジェクト進行管理・スケジュール策定 / クライアント折衝・要件ヒアリング / KGI・KPI設計・アクセス解析（Google Analytics等） / サイトマップ・ディレクトリマップ（情報設計）作成 / コンテンツ企画・ライティングディレクション / 見積書・提案書作成 / 外部ベンダー・クリエイター管理 / 品質管理（QAテスト・クロスブラウザチェック） / ABテスト・LPO（ランディングページ最適化）施策 / 運用マニュアル作成 / リリース判定・納品管理"
         ]
       }
     ],
     "metrics": [
-      { "label": "SYSTEMS ENGINEERING", "value": 92 },
-      { "label": "INTERACTION SYSTEMS", "value": 86 },
-      { "label": "FRONTEND ENGINEERING", "value": 80 },
-      { "label": "COPYWRITING", "value": 74 },
-      { "label": "BRAND DESIGN", "value": 68 },
-      { "label": "DATA DIRECTION", "value": 62 }
+      {
+        "label": "SYSTEMS ENGINEERING",
+        "value": 92
+      },
+      {
+        "label": "INTERACTION SYSTEMS",
+        "value": 86
+      },
+      {
+        "label": "FRONTEND ENGINEERING",
+        "value": 80
+      },
+      {
+        "label": "COPYWRITING",
+        "value": 74
+      },
+      {
+        "label": "BRAND DESIGN",
+        "value": 68
+      },
+      {
+        "label": "DATA DIRECTION",
+        "value": 62
+      }
     ]
   },
   "skills": {
@@ -54,23 +68,89 @@
       "accent": "S"
     },
     "description": [
-      "事業要件・UI/UX・実装を横断し、Webサービスの立ち上げと改善に必要なレイヤーを一気通貫で扱います。",
-      "表示速度、運用性、保守性、デザイン品質を同時に詰めるための技術選定と設計を重視しています。"
+      "WEB業界10年以上、UI/UXデザイナーやWEBエンジニアとしてのフリーランスとなって 6年以上になります。",
+      "正社員での出発点は遅く、28歳の時に新卒で営業会社（B to C 電話営業）を１年間経験後、職業訓練校に通ってWEB制作について学び、Web業界に転向しました。",
+      "WEBデザイナー兼マークアップエンジニアとしての駆け出しの頃は、WEBサイト新規制作・運用・リニューアル・デザイン・コーディング・ディレクション・法人営業・事業部立ち上げなどを経験しました。",
+      "フリーランスに転向してからは、個人またはチームでWEB媒体、事業DX化の流れに伴うUIUXデザインの領域やフロント実装、また新規サービス立ち上げやサイトリニューアル改善のためのディレクションなどを担当して参りました。",
+      "競合分析やIA設計といった上流工程から、Figmaを用いたUIデザイン～実装連携、React / TypeScript / Tailwind CSS / Viteなどを用いたフロントエンド実装、VercelやVPS等によるインフラ構築まで、Web制作の全工程を一人で完結できる点が最大の強みです。",
+      "最近では、AIエージェントやMCP、画像生成などを駆使した開発効率や品質向上をプロダクト開発に取り入れました。",
+      "一方で、営業職の経験や不動産仲介会社でのマーケティング責任者、WEBスクール講師としての実績があり、ビジネスロジックを理解した上でのデザイン・実装表現、SEO設計・各種ツール利用なども経験がございます。"
     ],
     "bankLabel": "TECH STACK",
     "tags": [
-      "Next.js",
+      "Context Engineering",
+      "Vibe Coding",
+      "Unit test",
+      "MCP",
       "React",
+      "Next.js",
+      "Astro",
+      "Vue.js",
+      "Angular",
+      "Node.js",
+      "Vite",
+      "Webpack",
       "TypeScript",
+      "JavaScript",
+      "EJS",
+      "Laravel",
+      "Livewire",
+      "Nginx",
+      "Go",
+      "MySQL",
+      "PostgreSQL",
+      "Supabase",
+      "Python",
+      "PHP",
+      "Html Living Standard",
+      "Shadcn UI",
+      "Material UI",
+      "MUI",
+      "Vuetify",
       "Tailwind CSS",
+      "Bootstrap",
       "SCSS",
+      "CSS3",
+      "Codex",
+      "Cursor",
+      "Claude Code",
+      "Antigravity",
+      "Copilot",
+      "Gemini",
+      "ChatGPT",
+      "NotebookKLM",
+      "Notion",
+      "Discord",
+      "Slack",
+      "Docker",
+      "CI/CD",
+      "GitHub",
+      "Vercel",
+      "DevOps",
+      "Cloudflare",
+      "VPS(Kagoya / Hostinger)",
+      "EmDash",
       "WordPress",
       "REST API",
-      "Vercel",
-      "Laravel",
-      "UI Design",
-      "SEO",
-      "Performance"
+      "Figma",
+      "Google Flow",
+      "Nanobanana",
+      "Midjourney",
+      "Photoshop",
+      "Illustrator",
+      "InDesign",
+      "Graphic Design",
+      "Brand Design",
+      "UI/UX Design",
+      "Project Management",
+      "Web Direction",
+      "Web Development",
+      "Web Design",
+      "Digital Marketing",
+      "SEO Optimization",
+      "Performance Tuning",
+      "Marketo",
+      "Teaching UX/UI Design"
     ]
   },
   "experience": {
@@ -105,7 +185,7 @@
     },
     "profile": {
       "sectionCode": "// 04. CHARACTER",
-      "name": "HAYATO_HYAMI",
+      "name": "Takahiro Sawdada",
       "body": [
         "Fast-moving digital products need design, engineering, content operations, and deployment to move as one system.",
         "I connect those layers and build interfaces that can keep shipping after release."

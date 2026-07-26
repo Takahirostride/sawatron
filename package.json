@@ -11,7 +11,9 @@
     "optimize:assets": "node scripts/optimize-assets.mjs",
     "build": "npm run optimize:assets && next build --turbopack",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test:e2e": "playwright test",
+    "screenshot": "node scripts/screenshot.mjs"
   },
   "dependencies": {
     "lucide-react": "1.24.0",
@@ -22,6 +24,7 @@
     "sharp": "0.35.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "@tailwindcss/postcss": "4.3.2",
     "@types/node": "24.10.1",
     "@types/react": "19.2.7",
