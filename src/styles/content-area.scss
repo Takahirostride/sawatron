@@ -407,6 +407,37 @@
       overflow-wrap: anywhere;
     }
 
+    a {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 2px;
+      color: #006fde;
+      font-weight: 800;
+      text-decoration-line: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition:
+        color 160ms ease,
+        text-shadow 160ms ease;
+
+      svg {
+        flex: 0 0 auto;
+        transform: translateY(2px);
+      }
+
+      &:hover,
+      &:focus-visible {
+        color: #004fa8;
+        outline: none;
+        text-shadow: 0 0 12px rgba(0, 130, 255, 0.3);
+      }
+
+      &:focus-visible {
+        border-radius: 2px;
+        box-shadow: 0 0 0 3px rgba(0, 130, 255, 0.25);
+      }
+    }
+
     p {
       margin: 0 0 12px;
     }
@@ -1091,7 +1122,7 @@
   }
 
   h2 {
-    margin: 18px 0 36px;
+    margin: 18px 0 14px;
     font-family: var(--font-display-stack);
     font-size: clamp(34px, 4vw, 62px);
     font-weight: 900;
@@ -1099,6 +1130,20 @@
     span {
       color: var(--blue);
     }
+  }
+
+  &__status {
+    align-self: flex-start;
+    margin: 0 0 28px;
+    border: 1px solid rgba(36, 123, 255, 0.55);
+    border-radius: 999px;
+    padding: 7px 12px;
+    background: rgba(255, 255, 255, 0.3);
+    color: #1558b0;
+    font-family: var(--font-display-stack);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
   }
 
   form {
@@ -1128,6 +1173,15 @@
     outline: none;
   }
 
+  input:disabled,
+  textarea:disabled {
+    border-color: rgba(80, 102, 158, 0.28);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(5, 10, 24, 0.48);
+    cursor: not-allowed;
+    opacity: 0.62;
+  }
+
   input {
     height: 45px;
     padding: 0 12px;
@@ -1154,6 +1208,14 @@
     color: var(--cyan);
     font-weight: 700;
     cursor: pointer;
+  }
+
+  button:disabled {
+    border-color: rgba(80, 102, 158, 0.42);
+    background: #52617d;
+    color: rgba(232, 238, 251, 0.62);
+    cursor: not-allowed;
+    opacity: 0.72;
   }
 
   &__form {

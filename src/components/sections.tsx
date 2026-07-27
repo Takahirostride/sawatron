@@ -47,14 +47,14 @@ export function HeroSection() {
         <Image
           className="hero__logoMark"
           src="/assets/svg/logo-sw-ignite.svg"
-          alt="SAWATRON"
+          alt="SAWADESIGN"
           width={78}
           height={78}
           unoptimized
           priority
         />
-        <span className="hero__logoText">SAWATRON</span>
-        <span className="hero__tag">&gt; 9 products through creativity.</span>
+        <span className="hero__logoText">SAWADESIGN</span>
+        <span className="hero__tag">rising creati with gumption.</span>
       </div>
 
       <div className="hero__dial" aria-hidden="true">
@@ -233,20 +233,23 @@ export function ContactSection() {
         <h2>
           INITIATE <span>CONTACT</span>
         </h2>
-        <form>
+        <p className="contact__status" id="contact-status">
+          COMING SOON
+        </p>
+        <form aria-describedby="contact-status">
           <label>
             SENDER_ID
-            <input type="text" name="name" placeholder="John Doe" />
+            <input type="text" name="name" placeholder="John Doe" disabled />
           </label>
           <label>
             CHANNEL
-            <input type="email" name="email" placeholder="you@domain.net" />
+            <input type="email" name="email" placeholder="you@domain.net" disabled />
           </label>
           <label className="contact__message">
             MESSAGE_PAYLOAD
-            <textarea name="message" placeholder="PROJECT / BUDGET / TIMELINE" />
+            <textarea name="message" placeholder="PROJECT / BUDGET / TIMELINE" disabled />
           </label>
-          <button type="submit" aria-label="問い合わせを送信">
+          <button type="submit" aria-label="問い合わせ機能は準備中です" disabled>
             <Mail size={16} />
             SEND_TRANSMISSION
           </button>
@@ -260,7 +263,7 @@ export function ContactSection() {
 }
 
 export function Footer() {
-  return <footer className="site-footer">© 2026 HAYATO_HYAMI — ENGINEERED IN THE VOID</footer>;
+  return <footer className="site-footer">© 2026 Sawadesign</footer>;
 }
 
 function SectionCode({ value, dark = true }: { value: string; dark?: boolean }) {

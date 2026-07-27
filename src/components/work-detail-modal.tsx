@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
+import type { ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { ArrowLeft, ArrowRight, ArrowUpRight, X } from "lucide-react";
 import type { MarkdownBlock, WorkDetail } from "@/lib/work-details";
@@ -13,6 +14,41 @@ const mobilePageSize = 3;
 type WorkDetailModalProps = {
   works: WorkDetail[];
 };
+
+const markdownLinkPattern = /\[([^\]\n]+)\]\((https?:\/\/[^\s)]+|mailto:[^\s)]+|\/[^\s)]*)\)/g;
+
+function MarkdownInline({ text }: { text: string }) {
+  const content: ReactNode[] = [];
+  let lastIndex = 0;
+
+  for (const match of text.matchAll(markdownLinkPattern)) {
+    const matchIndex = match.index;
+
+    if (matchIndex > lastIndex) {
+      content.push(text.slice(lastIndex, matchIndex));
+    }
+
+    content.push(
+      <a
+        key={`${matchIndex}-${match[2]}`}
+        href={match[2]}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${match[1]}（新しいタブで開く）`}
+      >
+        {match[1]}
+        <ArrowUpRight aria-hidden="true" size={14} />
+      </a>,
+    );
+    lastIndex = matchIndex + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    content.push(text.slice(lastIndex));
+  }
+
+  return <>{content}</>;
+}
 
 function DetailBlocks({ blocks }: { blocks: MarkdownBlock[] }) {
   return (
@@ -26,7 +62,9 @@ function DetailBlocks({ blocks }: { blocks: MarkdownBlock[] }) {
           return (
             <ul key={`${block.type}-${index}`}>
               {block.items.map((item, itemIndex) => (
-                <li key={`${item}-${itemIndex}`}>{item}</li>
+                <li key={`${item}-${itemIndex}`}>
+                  <MarkdownInline text={item} />
+                </li>
               ))}
             </ul>
           );
@@ -56,7 +94,11 @@ function DetailBlocks({ blocks }: { blocks: MarkdownBlock[] }) {
           );
         }
 
-        return <p key={`${block.type}-${index}`}>{block.text}</p>;
+        return (
+          <p key={`${block.type}-${index}`}>
+            <MarkdownInline text={block.text} />
+          </p>
+        );
       })}
     </>
   );

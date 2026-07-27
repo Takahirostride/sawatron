@@ -1,6 +1,6 @@
 ---
 slug: commerce-ops-dashboard
-order: 3
+order: 7
 title: コマース運用ダッシュボード
 category: Dashboard / Analytics
 period: 2025.08

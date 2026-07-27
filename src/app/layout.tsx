@@ -16,7 +16,7 @@ const rajdhani = Rajdhani({
 });
 
 export const metadata: Metadata = {
-  title: "SAWATRON | NEURON Portfolio",
+  title: "SAWADESIGN | NEURON Portfolio",
   description: "Cyber engineering portfolio powered by Next.js and Vercel.",
 };
 

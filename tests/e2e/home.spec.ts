@@ -22,7 +22,7 @@ test.describe("home page", () => {
 
     await page.goto("/", { waitUntil: "domcontentloaded" });
 
-    await expect(page.getByRole("img", { name: "SAWATRON" })).toBeVisible();
+    await expect(page.getByRole("img", { name: "SAWADESIGN" })).toBeVisible();
     await expect(page.getByRole("navigation", { name: "Primary" })).toBeVisible();
     await expect(page.getByRole("link", { name: /ABOUT/ })).toBeVisible();
     await expect(page.getByRole("heading", { name: /WHO AM I/ })).toBeVisible();
