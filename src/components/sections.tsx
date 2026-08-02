@@ -4,6 +4,7 @@ import type { PortfolioContent } from "@/lib/portfolio";
 import { textLines } from "@/lib/portfolio";
 import type { WorkDetail } from "@/lib/work-details";
 import { CyberpunkBackground } from "@/app/cyber-punk-background";
+import { AboutCardStack } from "@/components/about-card-stack";
 import { WorkDetailModal } from "@/components/work-detail-modal";
 
 const navItems = [
@@ -120,17 +121,7 @@ export function AboutSection({ content }: { content: PortfolioContent["about"] }
       </div>
 
       <div className="about__grid">
-        <div className="about__cards">
-          {content.services.map((service) => (
-            <article className="info-card" key={service.title}>
-              <div className="info-card__head">
-                <h2>{service.title}</h2>
-                <span>{service.parameter}</span>
-              </div>
-              <p>{textLines(service.body)}</p>
-            </article>
-          ))}
-        </div>
+        <AboutCardStack services={content.services} />
 
         <div className="metric-panel">
           {content.metrics.map((metric) => (
