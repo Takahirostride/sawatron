@@ -16,7 +16,6 @@ export type WorkDetail = {
   cover: string;
   modalImage: string;
   stacks: string[];
-  cardDate: string;
   cardExcerpt: string;
   cardTags: string[];
   cardImage: string;
@@ -154,7 +153,6 @@ export async function getWorkDetails(): Promise<WorkDetail[]> {
           .split(",")
           .map((stack) => stack.trim())
           .filter(Boolean),
-        cardDate: readMeta(meta, "cardDate", readMeta(meta, "period", "LIVE")),
         cardExcerpt: readMeta(meta, "cardExcerpt"),
         cardTags: readMeta(meta, "cardTags", readMeta(meta, "stacks"))
           .split(",")

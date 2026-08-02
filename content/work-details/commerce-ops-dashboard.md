@@ -8,7 +8,6 @@ team: PM / Frontend / Data
 cover: /assets/hero-car.webp
 modalImage: /assets/hero/gp-ciber-machine-dogfight-mini.png
 stacks: Next.js, TypeScript, Chart UI, API, Vercel
-cardDate: 2025.08
 cardExcerpt: 売上、在庫、キャンペーン指標を横断して確認できる運用画面を設計。日次改善に必要な指標を集約。
 cardTags: Dashboard, Analytics, API, Next.js, Vercel
 thumbnail: /assets/hero-car.webp

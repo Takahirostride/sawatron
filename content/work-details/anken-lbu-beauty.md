@@ -1,15 +1,15 @@
 ---
-slug: anken-lbu-sogi-tp
-order: 3
-title: 葬儀系プラットフォームリニューアル ～ 保守運用
+slug: anken-lbu-beauty
+order: 4
+title: 美容系Webサイト新規立ち上げ・リニューアル案件
 category: PM
-period: 2024.05 - 2026.07
+period: 2025.11 - 2026.07
 team: 4名体制
 cover: /assets/hero-racer.webp
 modalImage: /assets/hero/gp-ciber-machine-dogfight-mini.png
-stacks: HTML Living Standard, CSS/SCSS, JavaScript, PHP, Laravel, Livewire, MySQL , Cursor, Codex, Git, Vite, MCP, Nginx, Node.js, Docker, Github Actions, VPS, Cloudflare, Figma, Photoshop, Illustrator, Nano Banana, Backlog
-cardExcerpt: UI/UX、Laravel、
-cardTags: 要件定義, UI設計, Next.js, Laravel, Vercel
+stacks: JAMstack, SSG, SPA, HTML Living Standard, CSS/SCSS, TypeScript, Astro, Tailwind CSS, EmDash, REST API, Cursor, Codex, Git, Vite, MCP, Nginx, Node.js, Docker, Github Actions, VPS, Cloudflare, Figma, Photoshop, Illustrator, Nano Banana, Backlog
+cardExcerpt: UI/UX、Laravel、Next.js を横断して運用基盤を再設計。高負荷な記事更新とキャンペーン配信に耐える情報設計へ刷新。
+cardTags: JAMstack, SSR, EmDash, React, REST API, Cloudflare
 thumbnail: /assets/hero/gp-ciber-machine-dogfight-mini.png
 ---
 

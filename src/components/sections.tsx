@@ -54,7 +54,7 @@ export function HeroSection() {
           priority
         />
         <span className="hero__logoText">SAWADESIGN</span>
-        <span className="hero__tag">rising creati with gumption.</span>
+        <span className="hero__tag">rising creativity with gumption.</span>
       </div>
 
       <div className="hero__dial" aria-hidden="true">

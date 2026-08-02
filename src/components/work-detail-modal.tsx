@@ -366,7 +366,7 @@ function WorkCard({ work, onOpen }: { work: WorkDetail; onOpen: () => void }) {
       </div>
       <div className="work-card__content">
         <h2>{work.title}</h2>
-        <time>{work.cardDate}</time>
+        <time>{work.period}</time>
         <p>{work.cardExcerpt}</p>
         <div className="work-card__tags">
           {work.cardTags.slice(0, 6).map((tag) => (

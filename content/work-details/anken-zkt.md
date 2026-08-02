@@ -8,9 +8,8 @@ team: 4名体制～
 cover: /assets/hero-racer.webp
 modalImage: /assets/hero/gp-ciber-machine-dogfight-mini.png
 stacks: HTML Living Standard, CSS/SCSS, TypeScript, Next.js, React, Go, MySQL , Copilot, Git, VSCODE, A5SQL, Node.js, Docker, Backlog
-cardDate: 2026.05
 cardExcerpt: SES参画案件。某教育系 SaaS / 業務管理システムの管理画面の改修における、フロントエンドやバックエンドの技術的サポートを担当。
-cardTags: Next.js, React, Go, MySQL, Docker
+cardTags: Next.js, React, Go, MySQL, Docker, TypeScript
 thumbnail: /assets/hero/gp-ciber-machine-dogfight-mini.png
 ---
 

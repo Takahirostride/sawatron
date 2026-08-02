@@ -49,8 +49,14 @@ export type PortfolioContent = {
 
 const portfolioPath = path.join(process.cwd(), "content", "portfolio.json");
 
+function normalizeLineBreaks(value: string) {
+  return value.replace(/\/n/g, "\n").replace(/\\n/g, "\n");
+}
+
 export function textLines(value: TextLines) {
-  return Array.isArray(value) ? value.join("\n") : value;
+  return Array.isArray(value)
+    ? value.map((line) => normalizeLineBreaks(line)).join("\n")
+    : normalizeLineBreaks(value);
 }
 
 export async function getPortfolioContent(): Promise<PortfolioContent> {
