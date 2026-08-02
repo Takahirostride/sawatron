@@ -6,7 +6,7 @@ category: PM
 period: 2024.05 - 2026.07
 team: 4名体制
 cover: /assets/hero-racer.webp
-modalImage: /assets/hero/gp-ciber-machine-dogfight-mini.png
+modalImage: /assets/base/gp-default-tech-style.png
 stacks: HTML Living Standard, CSS/SCSS, JavaScript, PHP, Laravel, Livewire, MySQL , Cursor, Codex, Git, Vite, MCP, Nginx, Node.js, Docker, Github Actions, VPS, Cloudflare, Figma, Photoshop, Illustrator, Nano Banana, Backlog
 cardExcerpt: UI/UX、Laravel、
 cardTags: 要件定義, UI設計, Next.js, Laravel, Vercel

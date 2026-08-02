@@ -6,7 +6,7 @@ category: PM
 period: 2025.11 - 2026.07
 team: 4名体制
 cover: /assets/hero-racer.webp
-modalImage: /assets/hero/gp-ciber-machine-dogfight-mini.png
+modalImage: /assets/base/gp-default-tech-style.png
 stacks: JAMstack, SSG, SPA, HTML Living Standard, CSS/SCSS, TypeScript, Astro, Tailwind CSS, EmDash, REST API, Cursor, Codex, Git, Vite, MCP, Nginx, Node.js, Docker, Github Actions, VPS, Cloudflare, Figma, Photoshop, Illustrator, Nano Banana, Backlog
 cardExcerpt: UI/UX、Laravel、Next.js を横断して運用基盤を再設計。高負荷な記事更新とキャンペーン配信に耐える情報設計へ刷新。
 cardTags: JAMstack, SSR, EmDash, React, REST API, Cloudflare

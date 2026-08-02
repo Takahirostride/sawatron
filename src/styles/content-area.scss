@@ -206,10 +206,15 @@
     }
   }
 
-  &__cover {
-    inset: 0 0 auto !important;
+  &__cover-layer {
+    position: absolute;
+    inset: 0 0 auto;
     z-index: 0;
-    height: 17.5rem !important;
+    height: 16.5rem;
+    overflow: hidden;
+  }
+
+  &__cover {
     object-fit: cover;
     object-position: center;
     opacity: 0.82;

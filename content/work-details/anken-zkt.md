@@ -6,16 +6,16 @@ category: FE / BE
 period: 2026.05 - 2026.07
 team: 4名体制～
 cover: /assets/hero-racer.webp
-modalImage: /assets/hero/gp-ciber-machine-dogfight-mini.png
+modalImage: /assets/base/gp-default-tech-style.png
 stacks: HTML Living Standard, CSS/SCSS, TypeScript, Next.js, React, Go, MySQL , Copilot, Git, VSCODE, A5SQL, Node.js, Docker, Backlog
 cardExcerpt: SES参画案件。某教育系 SaaS / 業務管理システムの管理画面の改修における、フロントエンドやバックエンドの技術的サポートを担当。
 cardTags: Next.js, React, Go, MySQL, Docker, TypeScript
-thumbnail: /assets/hero/gp-ciber-machine-dogfight-mini.png
+thumbnail: /assets/experience/th-exp-zkt-01.png
 ---
 
 ## Project Details
 
-![Project Details thumbnail](/assets/hero/gp-ciber-machine-dogfight-mini.png){width=360 height=152}
+![Project Details thumbnail](/assets/experience/th-exp-zkt-01.png){width=400 height=150}
 
 ● 某教育系SaaS / 業務管理システム管理画面の改修（Next / React / TypeScript / Go）
  - 既存システムのバックエンド連携調査（Go/API × DB）
@@ -24,7 +24,7 @@ thumbnail: /assets/hero/gp-ciber-machine-dogfight-mini.png
 
 ## Outcome
 
-![Outcome thumbnail](/assets/hero/gp-ciber-machine-stream.webp){width=300 height=160}
+![Outcome thumbnail](/assets/experience/th-exp-zkt-02.png){width=400 height=150}
 
 ① 業務系DB調査・仕様突合（受講講座の請求・割引ロジック）
 請求・割引ドメインのデータ調査。開発DB約180テーブルから料金関連を抽出し、その後、料金・割引・請求に関係するテーブルをキーワード・DDL・除外ルールで体系化して割引上限（頭打ち）の適用有無を項目単位でマトリックス化した。A5:SQL、ER図、API設計書を用いた突合をし、クライアント向け説明資料のベースを作成。

@@ -223,14 +223,16 @@ export function WorkDetailModal({ works }: WorkDetailModalProps) {
         onClick={() => setActiveSlug(null)}
       />
       <article className="work-modal__panel">
-        <Image
-          className="work-modal__cover"
-          src={activeDetail.modalImage || modalBackground}
-          alt=""
-          fill
-          sizes="min(94vw, 1600px)"
-          unoptimized={Boolean(activeDetail.modalImage && !activeDetail.modalImage.startsWith("/"))}
-        />
+        <div className="work-modal__cover-layer" aria-hidden="true">
+          <Image
+            className="work-modal__cover"
+            src={activeDetail.modalImage || modalBackground}
+            alt=""
+            fill
+            sizes="min(94vw, 1600px)"
+            unoptimized={Boolean(activeDetail.modalImage && !activeDetail.modalImage.startsWith("/"))}
+          />
+        </div>
         <div className="work-modal__wash" />
         <button
           className="work-modal__close"
