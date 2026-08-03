@@ -16,8 +16,8 @@ const rajdhani = Rajdhani({
 });
 
 export const metadata: Metadata = {
-  title: "SAWADESIGN | NEURON Portfolio",
-  description: "Cyber engineering portfolio powered by Next.js and Vercel.",
+  title: "SAWADESIGN | rising creativity with gumption.",
+  description: "TAKAHIRO SAWADA's engineering & design portfolio launched in 2026",
 };
 
 export default function RootLayout({
