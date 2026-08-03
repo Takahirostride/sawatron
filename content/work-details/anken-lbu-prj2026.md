@@ -22,23 +22,27 @@ thumbnail: /assets/experience/th-exp-lbu-sobaya-01.png
 
 ① スワイプタイプのコンサルティングサービス向けLPを作成
 
-![Outcome thumbnail](/assets/hero/gp-ciber-machine-stream.webp){width=300 height=160}
+![Project Details thumbnail](/assets/experience/th-exp-lbu-shukyaku-01.png){width=400 height=150}
+ [関連サイトを見る ①](https://www.product-mp.com/meo)
+
+![Project Details thumbnail](/assets/experience/th-exp-lbu-shukyaku-02.png){width=400 height=150}
+ [関連サイトを見る ②](https://www.product-mp.com/pro-light)
+
+![Project Details thumbnail](/assets/experience/th-exp-lbu-shukyaku-03.png){width=400 height=150}
+ [関連サイトを見る ③](https://www.product-mp.com/exclusive-advisor)
 
  - RWD、画像は適したものをAIで生成
- - 顧客フォームとDB連携、Salesforce、GAと連携
+ - 顧客フォームとDB連携（Super base）、Salesforce、GAと連携
  - Vercel デプロイ（CICD）
- - Figmaで中間成果物デザイン作成
+ - FigmaでLPデザイン～中間成果物デザイン作成
  - AIベースで実装
-
- [関連サイトを見る ①](https://www.product-mp.com/meo)
- [関連サイトを見る ②](https://www.product-mp.com/pro-light)
- [関連サイトを見る ③](https://www.product-mp.com/exclusive-advisor)
 
 -----
 
 ② 新規開店の蕎麦屋店舗のブランドサイトを作成
 
-![Outcome thumbnail](/assets/hero/gp-ciber-machine-stream.webp){width=300 height=160}
+![Project Details thumbnail](/assets/experience/th-exp-lbu-sobaya-01.png){width=400 height=150}
+ [関連サイトを見る](https://www.sobaya-tokyo.com/)
 
  - 和風調かつモダンテイストなデザイン
  - CSSアニメーションによるリッチな表現
@@ -46,5 +50,3 @@ thumbnail: /assets/experience/th-exp-lbu-sobaya-01.png
  - Vercel デプロイ（CICD）
  - Figmaでメインデザイン～中間成果物デザイン作成
  - AIベースで実装
-
- [関連サイトを見る](https://tomin-osohshiki.jp/)

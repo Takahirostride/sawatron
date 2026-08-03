@@ -37,28 +37,28 @@
     ],
     "metrics": [
       {
-        "label": "SYSTEMS ENGINEERING",
-        "value": 92
-      },
-      {
-        "label": "INTERACTION SYSTEMS",
-        "value": 86
-      },
-      {
         "label": "FRONTEND ENGINEERING",
-        "value": 80
+        "value": 85
       },
       {
-        "label": "COPYWRITING",
-        "value": 74
+        "label": "UI/UX & VISUAL DESIGN",
+        "value": 90
       },
       {
-        "label": "BRAND DESIGN",
-        "value": 68
+        "label": "AI & AUTOMATION",
+        "value": 72.5
       },
       {
-        "label": "DATA DIRECTION",
-        "value": 62
+        "label": "TEAM & PROJECT MANAGEMENT",
+        "value": 72.5
+      },
+      {
+        "label": "SEO & DATA ANALYTICS",
+        "value": 55
+      },
+      {
+        "label": "BACKEND & INFRASTRUCTURE",
+        "value": 67.5
       }
     ]
   },
@@ -150,34 +150,34 @@
       "sectionCode": "// 03. EXPERIENCE_LOG",
       "items": [
         {
-          "year": "2026",
-          "title": "SENIOR SYSTEMS ARCHITECT",
-          "company": "SAWATRON LAB",
-          "body": "High-density digital product development and operations architecture."
+          "year": "2024 - 2026",
+          "title": "プロジェクトマネージャー",
+          "company": "要件定義 / 進行管理 / 課題整理",
+          "body": "クライアントとの要件整理から、スケジュール設計、開発進行、品質管理まで一貫して担当。事業 × デザイン × 開発の橋渡し役として、プロジェクトを進行。"
         },
         {
-          "year": "2024",
-          "title": "PRINCIPAL ENGINEER",
-          "company": "JUNKTIONS",
-          "body": "High-density digital product development and operations architecture."
+          "year": "2014 - 2026",
+          "title": "Webエンジニア",
+          "company": "フルスタック / フロントエンド / バックエンド / サーバーサイド / UI実装",
+          "body": "コーポレートサイト、LP、WebアプリのUI実装などを担当。表示速度・保守性・使いやすさを意識しつつ、フロントエンドを構築し、場合によってはDBやAPIと連携してサービスを開発。"
         },
         {
-          "year": "2022",
-          "title": "WEB DIRECTOR",
-          "company": "CREATIVE OPS",
-          "body": "High-density digital product development and operations architecture."
+          "year": "2014 - 2026",
+          "title": "UI / UXデザイナー",
+          "company": "IA設計 / 導線設計 / モック作成 / Figma / Adobe Illustrator / Adobe Photoshop / Adobe InDesign",
+          "body": "ユーザー視点をもとに、ワイヤーフレーム、画面設計、導線改善、ビジュアルデザインまで担当。リニューアルや新規開店などに伴い、モダンなデザインやコンセプトを重視して設計。"
+        },
+        {
+          "year": "2019 - 2024",
+          "title": "WEBディレクター",
+          "company": "企画提案 / 制作進行 / 改善施策",
+          "body": "Webサイトやデジタル施策の企画立案、制作ディレクション、公開後の改善提案まで対応。保守業務・コスト管理・見積書作成・外部ベンダーやクリエイターとの連携など。"
         },
         {
           "year": "2020",
-          "title": "SYSTEMS ENGINEER",
-          "company": "GRID SYSTEMS",
-          "body": "High-density digital product development and operations architecture."
-        },
-        {
-          "year": "2020",
-          "title": "SYSTEMS ENGINEER2",
-          "company": "GRID SYSTEMS",
-          "body": "High-density digital product development and operations architecture."
+          "title": "WEBスクール講師",
+          "company": "講義 / 講師資料作成 / メンタリング / 成果物レビュー",
+          "body": "受講生への講義、課題添削、実務視点でのレビューを担当。Figmaの実務ベースでの成果物作成手法～AI時代の最新の手法、デザイン～実装までの流れ、模擬ユーザーテストなどを講義で扱った。"
         }
       ]
     },

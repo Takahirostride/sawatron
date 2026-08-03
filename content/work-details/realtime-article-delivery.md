@@ -1,6 +1,6 @@
 ---
 slug: realtime-article-delivery
-order: 3
+order: 8
 title: リアルタイム記事配信基盤
 category: WordPress REST API / ISR
 period: 2025.11

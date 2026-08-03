@@ -1,5 +1,5 @@
 ---
-slug: anken-lbu-sogi-tp
+slug: anken-lbu-tps
 order: 3
 title: 葬儀系プラットフォームリニューアル ～ 保守運用
 category: PM
@@ -10,21 +10,18 @@ modalImage: /assets/base/gp-default-tech-style.png
 stacks: HTML Living Standard, CSS/SCSS, JavaScript, PHP, Laravel, Livewire, MySQL , Cursor, Codex, Git, Vite, MCP, Nginx, Node.js, Docker, Github Actions, VPS, Cloudflare, Figma, Photoshop, Illustrator, Nano Banana, Backlog
 cardExcerpt: UI/UX、Laravel、
 cardTags: 要件定義, UI設計, Next.js, Laravel, Vercel
-thumbnail: /assets/hero/gp-ciber-machine-dogfight-mini.png
+thumbnail: /assets/experience/th-exp-lbu-tps-01.png
 ---
 
 ## Project Details
 
-![Project Details thumbnail](/assets/hero/gp-ciber-machine-dogfight-mini.png){width=360 height=152}
+![Project Details thumbnail](/assets/experience/th-exp-lbu-tps-01.png){width=400 height=150}
+[関連サイトを見る](https://tomin-osohshiki.jp/)
 
 ● 葬儀系プラットフォームサイトのリニューアル、保守運用、サービス移管
 運用中の葬儀関連プラットフォームサイトを、編集体験と表示速度の両面から再設計しました。
 
-[関連サイトを見る](https://tomin-osohshiki.jp/)
-
 ## Outcome
-
-![Outcome thumbnail](/assets/hero/gp-ciber-machine-stream.webp){width=300 height=160}
 
 - 競合分析に基づいた技術選定、およびIA（情報設計）を含むUIデザインの提案・制作。ユーザーペルソナに基づいたコンテンツやトンマナの調整。
 - VPSサーバーの構築、サーバー移管、Dockerによる開発環境の整備。
