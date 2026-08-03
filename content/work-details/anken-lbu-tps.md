@@ -7,9 +7,9 @@ period: 2024.05 - 2026.07
 team: 4名体制
 cover: /assets/hero-racer.webp
 modalImage: /assets/base/gp-default-tech-style.png
-stacks: HTML Living Standard, CSS/SCSS, JavaScript, PHP, Laravel, Livewire, MySQL , Cursor, Codex, Git, Vite, MCP, Nginx, Node.js, Docker, Github Actions, VPS, Cloudflare, Figma, Photoshop, Illustrator, Nano Banana, Backlog
-cardExcerpt: UI/UX、Laravel、
-cardTags: 要件定義, UI設計, Next.js, Laravel, Vercel
+stacks: HTML Living Standard, CSS/SCSS, JavaScript, PHP, Laravel, Livewire, MySQL , Cursor, Codex, Git, Vite, MCP, Nginx, Node.js, Docker, Github Actions, VPS, Cloudflare, Figma, Photoshop, Illustrator, Nano Banana, Google Frow, Backlog, Notion AI
+cardExcerpt: 葬儀系プラットフォームサイトのフルリニューアル、技術スタックの変更、保守運用、サービス移管を技術サイドでマネジメント。
+cardTags: 要件定義, IA設計, 内部SEO・構造化, Laravel / Nginx / VPS, Cloudflare
 thumbnail: /assets/experience/th-exp-lbu-tps-01.png
 ---
 
@@ -18,8 +18,10 @@ thumbnail: /assets/experience/th-exp-lbu-tps-01.png
 ![Project Details thumbnail](/assets/experience/th-exp-lbu-tps-01.png){width=400 height=150}
 [関連サイトを見る](https://tomin-osohshiki.jp/)
 
-● 葬儀系プラットフォームサイトのリニューアル、保守運用、サービス移管
-運用中の葬儀関連プラットフォームサイトを、編集体験と表示速度の両面から再設計しました。
+● 葬儀系プラットフォームサイトのリニューアル、保守運用、サービス移管をマネジメント
+
+- 既存の葬儀関連プラットフォームサイトにおいて、旧来のレンタルサーバー環境から、Docker・Git・Laravelを活用した開発／運用体制への移行を担当。技術基盤の刷新により、保守性・拡張性・セキュリティの向上を図りました。
+- また、フレームワーク導入にあわせて、問い合わせフォームやユーザー導線を事業要件に合わせて再設計。リリース後も、保守・更新対応、インデックス登録対応、パフォーマンスチューニング、内部SEO設計、構造化データ対応など、継続的な運用改善を行いました。
 
 ## Outcome
 

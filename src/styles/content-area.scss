@@ -64,14 +64,21 @@
 }
 
 .avatar-orbit {
+  display: block;
+  flex: 0 0 auto;
   width: 72px;
-  height: 72px;
-  border: 3px solid rgba(38, 123, 255, 0.54);
-  border-radius: 999px;
-  background:
-    radial-gradient(circle at 50% 24%, #222 0 8%, transparent 9%),
-    linear-gradient(180deg, transparent 24%, #151515 25% 75%, transparent 76%),
-    rgba(55, 132, 255, 0.18);
+  line-height: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(38, 123, 255, 0.72);
+    outline-offset: 4px;
+  }
 }
 
 /* -------------------------------------------------------------------------- */

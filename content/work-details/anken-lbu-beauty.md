@@ -7,13 +7,27 @@ period: 2025.11 - 2026.07
 team: 4名体制
 cover: /assets/hero-racer.webp
 modalImage: /assets/base/gp-default-tech-style.png
-stacks: JAMstack, SSG, SPA, HTML Living Standard, CSS/SCSS, TypeScript, Astro, Tailwind CSS, EmDash, REST API, Cursor, Codex, Git, Vite, MCP, Nginx, Node.js, Docker, Github Actions, VPS, Cloudflare, Figma, Photoshop, Illustrator, Nano Banana, Backlog
-cardExcerpt: UI/UX、Laravel、Next.js を横断して運用基盤を再設計。高負荷な記事更新とキャンペーン配信に耐える情報設計へ刷新。
+stacks: JAMstack, SSG, SPA, HTML Living Standard, CSS/SCSS, TypeScript, React, Tailwind CSS, Three.js, GSAP, shadcn/ui, EmDash, REST API, Cursor, Codex, Git, Vite, MCP, Node.js, Github Actions, Vercel, Cloudflare, Figma, Photoshop, Illustrator, Nano Banana, Google Frow, Backlog
+cardExcerpt: 美容店舗向けブランドサイトの新規立ち上げを担当。30〜50代のtoCターゲット層に向け、ブランド訴求型デザインと店舗集客導線を設計。
 cardTags: JAMstack, SSR, EmDash, React, REST API, Cloudflare
 thumbnail: /assets/experience/th-exp-beauty-01.png
 ---
 
 ## Project Details
+
+● 美容店舗サイトの新規立ち上げ・ブランドサイト制作
+
+- 美容店舗向けブランドサイトの新規立ち上げを担当。競合調査、ペルソナ設計、IA設計、Figmaでのデザイン制作、React / Tailwind CSSを用いたフロントエンド実装まで一貫して対応しました。
+
+- toC向けの美容サービスとして、30〜50代のメインターゲット層に向けた視覚表現と情報設計を重視。ブランドの世界観を伝えながら、店舗への集客につながるサイト構成を設計しました。
+
+- また、サイト全体の印象を刷新したことで、顧客向けのブランド訴求だけでなく、他店舗スタッフからの関心獲得にもつながり、新規スタッフ採用にも貢献しました。
+
+- インフラ面では、Vercelを活用したサーバーレス構成を採用し、公開・改善・運用のスピードを高めました。
+
+## Outcome
+
+① 新規ネイルサロン
 
 ![Project Details thumbnail](/assets/experience/th-exp-beauty-01.png){width=400 height=150}
 [関連サイトを見る](https://genique.jp/)
@@ -25,7 +39,9 @@ thumbnail: /assets/experience/th-exp-beauty-01.png
 - 生成AI併用により、画像データや表現のクオリティを向上。
 - スケーラビリティを考慮したサーバーレス環境の設計・構築。
 
-## Project Details
+## Outcome
+
+② 新規眉毛サロン
 
 ![Project Details thumbnail](/assets/experience/th-exp-beauty-02.png){width=400 height=150}
 [関連サイトを見る](https://ibrowen.com/)

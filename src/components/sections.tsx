@@ -13,6 +13,27 @@ const navItems = [
   { label: "EXP_LOG", href: "#experience" },
   { label: "CONTACT", href: "#contact" },
 ];
+const githubProfileUrl = "https://github.com/Takahirostride";
+
+function GitHubAvatarLink() {
+  return (
+    <a
+      className="avatar-orbit"
+      href={githubProfileUrl}
+      target="_blank"
+      rel="noreferrer"
+      aria-label="GitHubプロフィールを開く"
+    >
+      <Image
+        src="/assets/base/gp-iconic-2D-hero-cyberpunk.png"
+        alt=""
+        width={106}
+        height={90}
+        sizes="106px"
+      />
+    </a>
+  );
+}
 
 export function HeroSection() {
   return (
@@ -117,7 +138,7 @@ export function AboutSection({ content }: { content: PortfolioContent["about"] }
           {content.heading.text}
           <span>{content.heading.accent}</span>
         </h1>
-        <div className="avatar-orbit" aria-hidden="true" />
+        <GitHubAvatarLink />
       </div>
 
       <div className="about__grid">
@@ -144,7 +165,7 @@ export function SkillsSection({ content }: { content: PortfolioContent["skills"]
           {content.heading.text}
           <span>{content.heading.accent}</span>
         </h2>
-        <div className="avatar-orbit" aria-hidden="true" />
+        <GitHubAvatarLink />
       </div>
       <div className="skills__body">
         <p>{textLines(content.description)}</p>
