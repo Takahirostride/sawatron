@@ -7,7 +7,7 @@ team: 7名体制
 cover: /assets/hero-racer.webp
 modalImage: /assets/base/gp-default-tech-style.png
 stacks: JAMstack, SSG, HTML Living Standard, CSS/SCSS, JavaScript, TypeScript, Ruby on Rails, Bootstrap 5, EJS, MySQL, WordPress, Visual Studio Code, Git, Webpacker, Webpack, Node.js, Docker, Github Actions, Figma, Photoshop, Illustrator, Midjourney, Backlog
-cardExcerpt: UI/UX、Laravel、Next.js を横断して運用基盤を再設計。高負荷な記事更新とキャンペーン配信に耐える情報設計へ刷新。
+cardExcerpt: オフィス移転支援プラットフォームサイトの開発において、IA設計、UIデザイン、フロントエンド実装までを一貫して担当。
 cardTags: JAMstack, SSG, EJS, Ruby on Rails, Docker, Figma
 thumbnail: /assets/experience/th-exp-htr-01.png
 ---

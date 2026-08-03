@@ -813,7 +813,9 @@
 }
 
 .skill-bank {
-  min-height: 250px;
+  min-height: 168px;
+  max-height: 188px;
+  overflow: hidden;
   padding: 1.05rem;
   background: rgba(111, 122, 152, 0.36);
 
@@ -825,9 +827,17 @@
   }
 
   dd {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, auto);
     gap: .5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 8px;
+    scrollbar-color: #267bff rgba(38, 123, 255, 0.14);
+    scrollbar-width: thin;
+    scroll-snap-type: x proximity;
   }
 
   span {
@@ -837,6 +847,26 @@
     background: #091225;
     color: #9ff8ff;
     font-size: 14px;
+    scroll-snap-align: start;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 761px) {
+    min-height: 250px;
+    max-height: none;
+    overflow: visible;
+
+    dd {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: visible;
+      padding-bottom: 0;
+      scroll-snap-type: none;
+    }
+
+    span {
+      white-space: normal;
+    }
   }
 }
 
