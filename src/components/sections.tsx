@@ -6,6 +6,7 @@ import type { WorkDetail } from "@/lib/work-details";
 import { CyberpunkBackground } from "@/app/cyber-punk-background";
 import { AboutCardStack } from "@/components/about-card-stack";
 import { WorkDetailModal } from "@/components/work-detail-modal";
+import { CharacterGallery } from "@/components/character-gallery";
 
 const navItems = [
   { label: "ABOUT", href: "#about" },
@@ -231,6 +232,7 @@ export function CharacterSection({ content }: { content: PortfolioContent["exper
           <SectionCode value={content.profile.sectionCode} />
           <h2>{content.profile.name}</h2>
           <p>{textLines(content.profile.body)}</p>
+          <CharacterGallery />
         </div>
       </div>
     </section>

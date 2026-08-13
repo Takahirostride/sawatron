@@ -45,6 +45,21 @@ test.describe("home page", () => {
     await expect(page.getByRole("dialog")).toBeHidden();
   });
 
+  test("opens the matching character image from a thumbnail", async ({ page }) => {
+    await page.goto("/", { waitUntil: "domcontentloaded" });
+
+    await page.getByRole("button", { name: "講師実績スライド 1を拡大表示" }).click();
+    const dialog = page.getByRole("dialog", { name: "講師実績スライド 1の拡大表示" });
+    await expect(dialog).toBeVisible();
+    await expect(dialog.getByRole("img", { name: "講師実績スライド 1" })).toHaveAttribute(
+      "src",
+      /gp-exp-instructor-01\.png/,
+    );
+
+    await page.keyboard.press("Escape");
+    await expect(dialog).toBeHidden();
+  });
+
   test("contact form accepts input", async ({ page }) => {
     await page.goto("/", { waitUntil: "domcontentloaded" });
     await page.getByPlaceholder("John Doe").fill("Test User");
