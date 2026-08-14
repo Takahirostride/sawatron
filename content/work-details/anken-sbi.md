@@ -3,7 +3,7 @@ slug: anken-sbi
 order: 7
 title: デザインシステム構築支援・プロモーション案件
 category: FE / UIUX Designer
-period: 2024.10 - 2025.06
+period: 2024.01 - 2024.03
 team: 7名体制
 modalImage: /assets/base/gp-default-tech-style.png
 stacks: HTML Living Standard, CSS/SCSS, JavaScript, React, EJS, Copilot, Git, Vite, Visual Studio Code, Node.js, Docker, Design system, Material Design, Figma, Photoshop, Illustrator, Miro, Backlog
