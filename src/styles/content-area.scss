@@ -1036,7 +1036,7 @@
 .work-card {
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 415px;
   border: 1px solid rgba(19, 232, 255, 0.46);
   border-radius: 8px;
   background: rgba(10, 18, 39, 0.88);
@@ -1160,7 +1160,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: .5rem;
-    max-height: 54px;
     margin-block: .375rem;
     overflow: hidden;
 
