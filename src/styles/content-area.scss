@@ -1241,18 +1241,6 @@
     scroll-snap-align: start;
     scroll-snap-stop: always;
 
-    &::after {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background:
-        radial-gradient(circle at 1.8% 21%, rgba(166, 241, 255, 0.52), transparent 0.9%),
-        radial-gradient(circle at 63% 48%, rgba(0, 245, 255, 0.08), transparent 28%),
-        linear-gradient(90deg, rgba(4, 8, 19, 0.18), transparent 28%, rgba(4, 8, 19, 0.46));
-      content: "";
-      pointer-events: none;
-    }
-
     @include bp.up(md) {
       padding: 80px 8vw;
     }
