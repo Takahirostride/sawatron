@@ -6,7 +6,7 @@ category: FE / BE
 period: 2026.05 - 2026.07
 team: 4名体制～
 modalImage: /assets/base/gp-default-tech-style.png
-stacks: HTML Living Standard, CSS/SCSS, TypeScript, Next.js, React, Go, MySQL , Copilot, Git, VSCODE, A5SQL, Node.js, Docker, Backlog
+stacks: HTML Living Standard, CSS/SCSS, TypeScript, Next.js, React, Go, MySQL , Copilot, Git, Visual Studio Code, A5SQL, Node.js, Docker, Backlog
 cardExcerpt: SES参画案件。某教育系 SaaS / 業務管理システムの管理画面の改修における、フロントエンドやバックエンドの技術的サポートを担当。
 cardTags: Next.js, React, Go, MySQL, Docker, TypeScript
 thumbnail: /assets/experience/th-exp-zkt-01.png
