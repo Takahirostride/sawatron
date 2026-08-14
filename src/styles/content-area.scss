@@ -1291,6 +1291,24 @@
     opacity: 0.98;
     filter: saturate(1.05) contrast(1.05);
   }
+
+  @media (max-width: 760px) {
+    &__stage {
+      /*
+       * Keep the stage itself as the snap target, then reveal the content only
+       * after the background has occupied roughly the first 60% of the screen.
+       * The stage is allowed to grow with its content so the following snap
+       * point cannot skip past unread content.
+       */
+      min-height: 100svh;
+      align-items: flex-start;
+      padding: 60svh 22px max(72px, env(safe-area-inset-bottom));
+
+      &--profile {
+        align-items: flex-start;
+      }
+    }
+  }
 }
 
 .experience-panel {

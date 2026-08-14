@@ -7,6 +7,8 @@ const assets = [
   ["public/assets/hero/gp-ciber-machine-dogfight.png", "public/assets/hero/gp-ciber-machine-dogfight.webp", 1340],
   ["public/assets/hero/ace-player.png", "public/assets/hero/ace-player.webp", 1980],
   ["public/assets/hero/ace-player-dark.png", "public/assets/hero/ace-player-dark.webp", 1980],
+  ["public/assets/hero/ace-player-sp.png", "public/assets/hero/ace-player-sp.webp", 1080],
+  ["public/assets/hero/ace-player-dark-sp.png", "public/assets/hero/ace-player-dark-sp.webp", 1080],
 ];
 
 async function shouldWrite(input, output) {

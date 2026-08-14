@@ -106,6 +106,59 @@ test.describe("home page", () => {
     await expect(dialog).toBeHidden();
   });
 
+  test("starts mobile character content after the background reveal without skipping it", async ({
+    page,
+  }, testInfo) => {
+    test.skip(testInfo.project.name !== "chromium-mobile", "Mobile snap layout");
+    await page.goto("/", { waitUntil: "domcontentloaded" });
+
+    const layout = await page.evaluate(() => {
+      const stages = Array.from(document.querySelectorAll<HTMLElement>(".character__stage"));
+
+      return stages.map((stage, index) => {
+        const content = stage.querySelector<HTMLElement>(".experience-panel, .character-copy");
+        if (!content) return null;
+
+        const stageRect = stage.getBoundingClientRect();
+        const contentRect = content.getBoundingClientRect();
+
+        return {
+          contentStart: contentRect.top - stageRect.top,
+          contentEnd: contentRect.bottom - stageRect.top,
+          stageHeight: stageRect.height,
+          viewportHeight: window.innerHeight,
+          hasInternalScroll: index === 0 ? content.scrollHeight > content.clientHeight : null,
+          overflowY: getComputedStyle(content).overflowY,
+        };
+      });
+    });
+
+    expect(layout).not.toContain(null);
+    for (const stage of layout) {
+      expect(stage).not.toBeNull();
+      if (!stage) continue;
+
+      expect(stage.contentStart).toBeGreaterThanOrEqual(stage.viewportHeight * 0.58);
+      expect(stage.contentStart).toBeLessThanOrEqual(stage.viewportHeight * 0.62);
+      expect(stage.stageHeight).toBeGreaterThanOrEqual(stage.contentEnd);
+    }
+
+    expect(layout[0]?.hasInternalScroll).toBe(true);
+    expect(layout[0]?.overflowY).toBe("auto");
+
+    const mobileBackgrounds = page.locator(".character__bg");
+    const expectedSources = ["ace-player-sp.webp", "ace-player-dark-sp.webp"];
+    await expect(mobileBackgrounds).toHaveCount(expectedSources.length);
+
+    for (const [index, expectedSource] of expectedSources.entries()) {
+      const background = mobileBackgrounds.nth(index);
+      await background.scrollIntoViewIfNeeded();
+      await expect
+        .poll(() => background.evaluate((image: HTMLImageElement) => image.currentSrc))
+        .toContain(expectedSource);
+    }
+  });
+
   test("contact form accepts input", async ({ page }) => {
     await page.goto("/", { waitUntil: "domcontentloaded" });
     await page.getByPlaceholder("John Doe").fill("Test User");

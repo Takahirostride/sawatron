@@ -196,14 +196,21 @@ export function CharacterSection({ content }: { content: PortfolioContent["exper
   return (
     <section className="character dark-section" id="experience">
       <div className="character__stage character__stage--experience">
-        <Image
-          className="character__bg"
-          src="/assets/hero/ace-player.webp"
-          alt=""
-          fill
-          sizes="100vw"
-          aria-hidden="true"
-        />
+        <picture>
+          <source
+            media="(max-width: 760px)"
+            srcSet="/assets/hero/ace-player-sp.webp"
+            type="image/webp"
+          />
+          <Image
+            className="character__bg"
+            src="/assets/hero/ace-player.webp"
+            alt=""
+            fill
+            sizes="100vw"
+            aria-hidden="true"
+          />
+        </picture>
         <div className="experience-panel">
           <SectionCode value={content.log.sectionCode} />
           {content.log.items.map((item) => (
@@ -237,14 +244,21 @@ export function CharacterSection({ content }: { content: PortfolioContent["exper
       </div>
 
       <div className="character__stage character__stage--profile">
-        <Image
-          className="character__bg"
-          src="/assets/hero/ace-player-dark.webp"
-          alt=""
-          fill
-          sizes="100vw"
-          aria-hidden="true"
-        />
+        <picture>
+          <source
+            media="(max-width: 760px)"
+            srcSet="/assets/hero/ace-player-dark-sp.webp"
+            type="image/webp"
+          />
+          <Image
+            className="character__bg"
+            src="/assets/hero/ace-player-dark.webp"
+            alt=""
+            fill
+            sizes="100vw"
+            aria-hidden="true"
+          />
+        </picture>
         <div className="character-copy">
           <SectionCode value={content.profile.sectionCode} />
           <h2>{content.profile.name}</h2>
