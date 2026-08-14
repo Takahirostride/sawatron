@@ -5,7 +5,6 @@ title: 教育系アプリ保守運用案件
 category: FE / BE
 period: 2026.05 - 2026.07
 team: 4名体制～
-cover: /assets/hero-racer.webp
 modalImage: /assets/base/gp-default-tech-style.png
 stacks: HTML Living Standard, CSS/SCSS, TypeScript, Next.js, React, Go, MySQL , Copilot, Git, VSCODE, A5SQL, Node.js, Docker, Backlog
 cardExcerpt: SES参画案件。某教育系 SaaS / 業務管理システムの管理画面の改修における、フロントエンドやバックエンドの技術的サポートを担当。

@@ -17,7 +17,6 @@ const fallbackPosts: PortfolioPost[] = [
     excerpt:
       "UI/UX、Laravel、Next.js を横断して運用基盤を再設計。高負荷な記事更新とキャンペーン配信に耐える情報設計へ刷新。",
     tags: ["要件定義", "UI設計", "Next.js", "Laravel", "Vercel"],
-    image: "/assets/hero-racer.webp",
   },
   {
     id: 2,
@@ -27,7 +26,6 @@ const fallbackPosts: PortfolioPost[] = [
     excerpt:
       "WordPress REST API と ISR を組み合わせ、編集者の更新体験と表示速度を両立するコンテンツフローを構築。",
     tags: ["WordPress", "REST API", "ISR", "CMS", "SEO"],
-    image: "/assets/hero-car.webp",
   },
 ];
 

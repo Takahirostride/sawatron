@@ -5,7 +5,6 @@ title: 葬儀系プラットフォームリニューアル ～ 保守運用
 category: PM
 period: 2024.05 - 2026.07
 team: 4名体制
-cover: /assets/hero-racer.webp
 modalImage: /assets/base/gp-default-tech-style.png
 stacks: HTML Living Standard, CSS/SCSS, JavaScript, PHP, Laravel, Livewire, MySQL , Cursor, Codex, Git, Vite, MCP, Nginx, Node.js, Docker, Github Actions, VPS, Cloudflare, Figma, Photoshop, Illustrator, Nano Banana, Google Frow, Backlog, Notion AI
 cardExcerpt: 葬儀系プラットフォームサイトのフルリニューアル、技術スタックの変更、保守運用、サービス移管を技術サイドでマネジメント。

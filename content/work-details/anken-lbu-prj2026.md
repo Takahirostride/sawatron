@@ -5,7 +5,6 @@ title: コンサル用LP・飲食店HP新規立ち上げ案件
 category: PM
 period: 2026.04 - 2026.07
 team: 4名体制～
-cover: /assets/hero-racer.webp
 modalImage: /assets/base/gp-default-tech-style.png
 stacks: JAMstack, SSG, HTML Living Standard, CSS/SCSS, TypeScript, Astro, Tailwind CSS, PostgreSQL , Cursor, Git, Vite, MCP, Codex, Node.js, Docker, Vercel, SuperBase, Figma, Photoshop, Illustrator, Backlog
 cardExcerpt: 新規コンサルティング事業、新規飲食店舗開発などに向けたLPサイトの新規立ち上げ。サーバーレス設計でリリースまでのPDCAを素早く実施。

@@ -13,7 +13,6 @@ export type WorkDetail = {
   category: string;
   period: string;
   team: string;
-  cover: string;
   modalImage: string;
   stacks: string[];
   cardExcerpt: string;
@@ -143,11 +142,10 @@ export async function getWorkDetails(): Promise<WorkDetail[]> {
         category: readMeta(meta, "category", "Project"),
         period: readMeta(meta, "period", "LIVE"),
         team: readMeta(meta, "team", "1名体制"),
-        cover: readMeta(meta, "cover", "/assets/hero/gp-ciber-machine-stream.webp"),
         modalImage: readMeta(
           meta,
           "modalImage",
-          readMeta(meta, "cover", "/assets/hero/gp-ciber-machine-dogfight-mini.png"),
+          "/assets/hero/gp-ciber-machine-dogfight-mini.png",
         ),
         stacks: readMeta(meta, "stacks")
           .split(",")
@@ -158,11 +156,11 @@ export async function getWorkDetails(): Promise<WorkDetail[]> {
           .split(",")
           .map((tag) => tag.trim())
           .filter(Boolean),
-        cardImage: readMeta(meta, "cardImage", readMeta(meta, "cover", "/assets/hero-car.webp")),
+        cardImage: readMeta(meta, "cardImage", "/assets/hero/gp-ciber-machine-stream.webp"),
         thumbnail: readMeta(
           meta,
           "thumbnail",
-          readMeta(meta, "cardImage", readMeta(meta, "cover", "/assets/hero-car.webp")),
+          readMeta(meta, "cardImage", "/assets/hero/gp-ciber-machine-stream.webp"),
         ),
         order: Number(readMeta(meta, "order", "999")),
         blocks: parseMarkdownBlocks(body),

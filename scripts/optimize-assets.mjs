@@ -3,8 +3,6 @@ import path from "node:path";
 import sharp from "sharp";
 
 const assets = [
-  ["public/assets/hero-racer.png", "public/assets/hero-racer.webp", 1920],
-  ["public/assets/hero-car.png", "public/assets/hero-car.webp", 1920],
   ["public/assets/hero/gp-ciber-machine-stream.png", "public/assets/hero/gp-ciber-machine-stream.webp", 1700],
   ["public/assets/hero/gp-ciber-machine-dogfight.png", "public/assets/hero/gp-ciber-machine-dogfight.webp", 1340],
   ["public/assets/hero/ace-player.png", "public/assets/hero/ace-player.webp", 1980],

@@ -1,10 +1,9 @@
 ---
 slug: anken-htr
-order: 5
+order: 8
 title: オフィス移転プラットフォームサービスリニューアル案件
 period: 2023.03 - 2023.09
 team: 7名体制
-cover: /assets/hero-racer.webp
 modalImage: /assets/base/gp-default-tech-style.png
 stacks: JAMstack, SSG, HTML Living Standard, CSS/SCSS, JavaScript, TypeScript, Ruby on Rails, Bootstrap 5, EJS, MySQL, WordPress, Visual Studio Code, Git, Webpacker, Webpack, Node.js, Docker, Github Actions, Figma, Photoshop, Illustrator, Midjourney, Backlog
 cardExcerpt: オフィス移転支援プラットフォームサイトの開発において、IA設計、UIデザイン、フロントエンド実装までを一貫して担当。

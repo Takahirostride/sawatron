@@ -5,7 +5,6 @@ title: 美容系Webサイト新規立ち上げ・リニューアル案件
 category: PM
 period: 2025.11 - 2026.07
 team: 4名体制
-cover: /assets/hero-racer.webp
 modalImage: /assets/base/gp-default-tech-style.png
 stacks: JAMstack, SSG, SPA, HTML Living Standard, CSS/SCSS, TypeScript, React, Tailwind CSS, Three.js, GSAP, shadcn/ui, EmDash, REST API, Cursor, Codex, Git, Vite, MCP, Node.js, Github Actions, Vercel, Cloudflare, Figma, Photoshop, Illustrator, Nano Banana, Google Frow, Backlog
 cardExcerpt: 美容店舗向けブランドサイトの新規立ち上げを担当。30〜50代のtoCターゲット層に向け、ブランド訴求型デザインと店舗集客導線を設計。
