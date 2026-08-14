@@ -37,6 +37,10 @@ export type PortfolioContent = {
         title: string;
         company: string;
         body: TextLines;
+        deliverables?: Array<{
+          name: string;
+          url: string;
+        }>;
       }>;
     };
     profile: {

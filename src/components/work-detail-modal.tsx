@@ -279,15 +279,17 @@ export function WorkDetailModal({ works }: WorkDetailModalProps) {
       data-testid="works-interactive"
       data-ready="false"
     >
-      <div
-        className="works__viewport works__viewport--desktop"
-        ref={desktopViewportRef}
-        onScroll={syncDesktopPage}
-      >
-        <div className="works__rail" aria-label="Works list">
-          {works.map((work) => (
-            <WorkCard key={work.slug} work={work} onOpen={() => setActiveSlug(work.slug)} />
-          ))}
+      <div className="works__viewport-frame">
+        <div
+          className="works__viewport works__viewport--desktop"
+          ref={desktopViewportRef}
+          onScroll={syncDesktopPage}
+        >
+          <div className="works__rail" aria-label="Works list">
+            {works.map((work) => (
+              <WorkCard key={work.slug} work={work} onOpen={() => setActiveSlug(work.slug)} />
+            ))}
+          </div>
         </div>
       </div>
       {desktopPageCount > 1 ? (
@@ -368,7 +370,10 @@ function WorkCard({ work, onOpen }: { work: WorkDetail; onOpen: () => void }) {
       </div>
       <div className="work-card__content">
         <h2>{work.title}</h2>
-        <time>{work.period}</time>
+        <div className="work-card__meta">
+          <time>{work.period}</time>
+          <span className="work-card__category">{work.category}</span>
+        </div>
         <p>{work.cardExcerpt}</p>
         <div className="work-card__tags">
           {work.cardTags.slice(0, 6).map((tag) => (

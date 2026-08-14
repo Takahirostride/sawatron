@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Mail, RadioTower } from "lucide-react";
+import { ArrowUpRight, Mail, RadioTower } from "lucide-react";
 import type { PortfolioContent } from "@/lib/portfolio";
 import { textLines } from "@/lib/portfolio";
 import type { WorkDetail } from "@/lib/work-details";
@@ -213,6 +213,23 @@ export function CharacterSection({ content }: { content: PortfolioContent["exper
                 <h2>{item.title}</h2>
                 <span>{item.company}</span>
                 <p>{textLines(item.body)}</p>
+                {item.deliverables?.length ? (
+                  <ul className="experience-item__deliverables" aria-label="関連成果物">
+                    {item.deliverables.map((deliverable) => (
+                      <li key={`${deliverable.name}-${deliverable.url}`}>
+                        <a
+                          href={deliverable.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${deliverable.name}を新しいタブで開く`}
+                        >
+                          {deliverable.name}
+                          <ArrowUpRight aria-hidden="true" size={14} />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             </article>
           ))}

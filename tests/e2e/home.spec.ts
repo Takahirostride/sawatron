@@ -33,6 +33,14 @@ test.describe("home page", () => {
     expect(browserErrors).toEqual([]);
   });
 
+  test("shows category information on work cards", async ({ page }) => {
+    await page.goto("/", { waitUntil: "domcontentloaded" });
+
+    const firstCard = page.locator(".work-card:visible").first();
+    await expect(firstCard.locator(".work-card__category")).toBeVisible();
+    await expect(firstCard.locator(".work-card__category")).not.toHaveText("");
+  });
+
   test("opens and closes a work detail modal", async ({ page }) => {
     await page.goto("/", { waitUntil: "domcontentloaded" });
     await expect(page.getByTestId("works-interactive")).toHaveAttribute("data-ready", "true");
@@ -43,6 +51,44 @@ test.describe("home page", () => {
 
     await page.locator(".work-modal__close").click();
     await expect(page.getByRole("dialog")).toBeHidden();
+  });
+
+  test("keeps the desktop slider shadows fixed while the rail scrolls", async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== "chromium-desktop", "Desktop slider behavior");
+    await page.goto("/", { waitUntil: "domcontentloaded" });
+
+    const frame = page.locator(".works__viewport-frame");
+    const viewport = page.locator(".works__viewport--desktop");
+    await expect(frame).toBeVisible();
+    await expect
+      .poll(() => viewport.evaluate((element) => element.scrollLeft))
+      .toBe(0);
+
+    const shadowPlacement = await page.evaluate(() => {
+      const frameElement = document.querySelector(".works__viewport-frame");
+      const viewportElement = document.querySelector(".works__viewport--desktop");
+      if (!frameElement || !viewportElement) return null;
+
+      return {
+        frameBefore: getComputedStyle(frameElement, "::before").content,
+        frameAfter: getComputedStyle(frameElement, "::after").content,
+        viewportBefore: getComputedStyle(viewportElement, "::before").content,
+        viewportAfter: getComputedStyle(viewportElement, "::after").content,
+      };
+    });
+
+    expect(shadowPlacement).toEqual({
+      frameBefore: '\"\"',
+      frameAfter: '\"\"',
+      viewportBefore: "none",
+      viewportAfter: "none",
+    });
+
+    await page.getByRole("button", { name: "次のWORKSを表示" }).click();
+    await expect
+      .poll(() => viewport.evaluate((element) => element.scrollLeft))
+      .toBeGreaterThan(0);
+    await expect(frame).toBeVisible();
   });
 
   test("opens the matching character image from a thumbnail", async ({ page }) => {

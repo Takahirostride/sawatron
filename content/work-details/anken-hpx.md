@@ -2,7 +2,7 @@
 slug: anken-hpx
 order: 5
 title: Webスクール講師案件
-category: Instructor
+category: UIUX Instructor
 period: 2024.10 - 2025.06
 team: 1名
 modalImage: /assets/base/gp-default-tech-style.png

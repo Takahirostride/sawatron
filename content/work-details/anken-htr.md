@@ -2,6 +2,7 @@
 slug: anken-htr
 order: 8
 title: オフィス移転プラットフォームサービスリニューアル案件
+category: FE / UIUX Designer
 period: 2023.03 - 2023.09
 team: 7名体制
 modalImage: /assets/base/gp-default-tech-style.png

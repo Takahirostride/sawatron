@@ -2,13 +2,13 @@
 slug: anken-tkn
 order: 10
 title: 大手保険会社サービス関連デザイン案件
-category: UIUXデザイナー 
+category: UIUX Designer 
 period: 2021.11 - 2022.02
 team: 3名体制
 modalImage: /assets/base/gp-default-tech-style.png
-stacks: Web Direction, Figma, AdobeXD, Photoshop, Illustrator, Miro
+stacks: Web Direction, アプリ UI, Figma, AdobeXD, Photoshop, Illustrator, Miro
 cardExcerpt: 海運業務用WEBサイトのデザイン改修案、新規ヘルスケアアプリのUI/UXデザインや仕様策定などを担当した。
-cardTags: Web Direction, Figma, AdobeXD, Photoshop, Illustrator, Miro
+cardTags: Web Direction, アプリ UI, Figma, AdobeXD, Photoshop, Illustrator
 thumbnail: /assets/experience/th-exp-marine-01.png
 ---
 

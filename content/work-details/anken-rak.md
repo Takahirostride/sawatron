@@ -6,9 +6,9 @@ category: Web Director
 period: 2023.12 - 2024.03
 team: 5名体制
 modalImage: /assets/base/gp-default-tech-style.png
-stacks: Web Direction, Figma, Miro, Viber
+stacks: Web Direction, アプリ UI, Figma, Miro, Viber
 cardExcerpt: 大手保険・金融商品企業の新規Webサービス（PWAアプリ・Webサイト）開発に関するWebディレクションを担当。
-cardTags: Web Direction, Figma, Miro, Viber
+cardTags: Web Direction, アプリ UI, Figma, Miro, Viber
 thumbnail: /assets/experience/th-exp-finance-01.png
 ---
 
