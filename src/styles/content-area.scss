@@ -1,3 +1,5 @@
+@use "breakpoints" as bp;
+
 /* -------------------------------------------------------------------------- */
 /* Section shared                                                             */
 /* -------------------------------------------------------------------------- */
@@ -91,7 +93,7 @@
   scroll-snap-align: start;
   scroll-snap-stop: always;
 
-  @media (min-width: 761px) {
+  @include bp.up(md) {
     padding-inline: 10vw;
   }
 
@@ -104,11 +106,11 @@
     max-width: 1260px;
     margin: 36px auto 0;
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       gap: 68px;
     }
 
-    @media (min-width: 1181px) {
+    @include bp.up(lg) {
       grid-template-columns: minmax(520px, 780px) minmax(340px, 480px);
     }
   }
@@ -290,7 +292,7 @@
     }
   }
 
-  @media (min-width: 761px) {
+  @include bp.up(md) {
     &__viewport {
       min-height: 460px;
     }
@@ -311,7 +313,7 @@
   overflow-y: auto;
   padding: 0;
 
-  @media (min-width: 1181px) {
+  @include bp.up(lg) {
     place-items: center;
     padding: 3.75vh 3.75vw;
   }
@@ -340,7 +342,7 @@
       0 0 70px 28px rgba(0, 232, 255, 0.28),
       0 26px 70px rgba(0, 0, 0, 0.54);
 
-    @media (min-width: 1181px) {
+    @include bp.up(lg) {
       width: 92.5vw;
       max-width: 1680px;
       min-height: 0;
@@ -398,14 +400,14 @@
       transform: scale(1.05);
     }
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       top: 28px;
       right: 32px;
       width: 66px;
       height: 66px;
     }
 
-    @media (min-width: 1181px) {
+    @include bp.up(lg) {
       top: calc(3.75vh + 28px);
       right: calc(3.75vw + 32px);
     }
@@ -423,14 +425,14 @@
     color: #030713;
     overflow-wrap: anywhere;
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       min-width: auto;
       gap: 24px;
       padding: 36px clamp(24px, 4vw, 54px);
       overflow-wrap: normal;
     }
 
-    @media (min-width: 1181px) {
+    @include bp.up(lg) {
       min-height: 0;
     }
   }
@@ -456,7 +458,7 @@
         0 0 1px rgba(255, 255, 255, 0.8);
     }
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       min-width: auto;
       max-width: 1040px;
       padding-right: 0;
@@ -493,7 +495,7 @@
       overflow-wrap: anywhere;
     }
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       flex-wrap: nowrap;
       overflow-x: auto;
 
@@ -514,7 +516,7 @@
     gap: 18px;
     align-items: start;
 
-    @media (min-width: 1181px) {
+    @include bp.up(lg) {
       min-width: auto;
       grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
       gap: 12px;
@@ -620,7 +622,7 @@
       padding-left: 1.2em;
     }
 
-    @media (min-width: 1181px) {
+    @include bp.up(lg) {
       min-width: auto;
       max-width: none;
       padding: 1.05rem;
@@ -726,7 +728,7 @@
       overflow-wrap: anywhere;
     }
 
-    @media (min-width: 1181px) {
+    @include bp.up(lg) {
       min-width: auto;
       max-width: none;
       min-height: min(56vh, 760px);
@@ -781,7 +783,7 @@
   scroll-snap-align: start;
   scroll-snap-stop: always;
 
-  @media (min-width: 761px) {
+  @include bp.up(md) {
     padding-inline: 10vw;
   }
 
@@ -794,21 +796,26 @@
     max-width: 1200px;
     margin: 44px auto 0;
 
-    p {
-      margin: 0;
-      font-size: 17px;
-      font-weight: 600;
-      line-height: 2.05;
-      white-space: pre-line;
-    }
-
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       gap: 70px;
     }
 
-    @media (min-width: 1181px) {
+    @include bp.up(lg) {
       grid-template-columns: minmax(420px, 620px) minmax(420px, 600px);
     }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 2.05;
+      white-space: pre-line;
+
+      @include bp.up(md) {
+        font-size: 16px;
+      }
+    }
+
   }
 }
 
@@ -851,7 +858,7 @@
     white-space: nowrap;
   }
 
-  @media (min-width: 761px) {
+  @include bp.up(md) {
     min-height: 250px;
     max-height: none;
     overflow: visible;
@@ -893,7 +900,7 @@
     mask-image: linear-gradient(180deg, transparent, #000 20%, #000 84%, transparent);
   }
 
-  @media (min-width: 761px) {
+  @include bp.up(md) {
     padding-inline: 10vw;
   }
 
@@ -954,7 +961,7 @@
     display: contents;
   }
 
-  @media (min-width: 761px) {
+  @include bp.up(md) {
     &__viewport-frame {
       position: relative;
       z-index: 1;
@@ -1036,7 +1043,7 @@
   box-shadow: 0 0 34px rgba(19, 232, 255, 0.16);
   overflow: hidden;
 
-  @media (min-width: 761px) {
+  @include bp.up(md) {
     height: 500px;
   }
 
@@ -1049,7 +1056,7 @@
     background: linear-gradient(135deg, rgba(19, 232, 255, 0.18), rgba(255, 43, 214, 0.16));
     overflow: hidden;
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       height: 180px;
       margin: .75rem .75rem 0;
       border-width: 1px;
@@ -1069,7 +1076,7 @@
     flex-direction: column;
     padding: 1.05rem;
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       padding: 1.5rem 1.75rem;
     }
   }
@@ -1086,7 +1093,7 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       margin-bottom: .75rem;
       font-size: 20px;
       text-align: center;
@@ -1100,7 +1107,7 @@
     gap: 8px;
     margin-bottom: .375rem;
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       justify-content: center;
       margin-bottom: .75rem;
     }
@@ -1110,7 +1117,7 @@
     color: #c8d5ff;
     font-size: 12px;
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       font-size: inherit;
     }
   }
@@ -1126,7 +1133,7 @@
     line-height: 1.35;
     white-space: nowrap;
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       padding: 3px 9px;
       font-size: 12px;
     }
@@ -1143,7 +1150,7 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       font-size: inherit;
       line-height: 1.7;
     }
@@ -1157,7 +1164,7 @@
     margin-block: .375rem;
     overflow: hidden;
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       max-height: 62px;
       margin-block: .75rem;
     }
@@ -1169,7 +1176,7 @@
       color: #eaf2ff;
       font-size: 12px;
 
-      @media (min-width: 761px) {
+      @include bp.up(md) {
         padding: .25rem .5rem;
       }
     }
@@ -1193,7 +1200,7 @@
     margin-top: auto;
     cursor: pointer;
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       min-height: 44px;
       font-size: inherit;
     }
@@ -1247,14 +1254,14 @@
       pointer-events: none;
     }
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       padding: 80px 8vw;
     }
 
     &--experience {
       justify-content: center;
 
-      @media (min-width: 1181px) {
+      @include bp.up(lg) {
         justify-content: flex-end;
 
         .character__bg {
@@ -1268,7 +1275,7 @@
       align-items: flex-end;
       padding-bottom: 7vh;
 
-      @media (min-width: 1181px) {
+      @include bp.up(lg) {
         justify-content: flex-start;
 
         .character__bg {
@@ -1301,7 +1308,7 @@
   scrollbar-color: rgba(19, 232, 255, 0.75) rgba(10, 18, 39, 0.34);
   scrollbar-width: thin;
 
-  @media (min-width: 761px) {
+  @include bp.up(md) {
     max-height: min(66vh, 560px);
   }
 }
@@ -1374,7 +1381,7 @@
     }
   }
 
-  @media (min-width: 761px) {
+  @include bp.up(md) {
     grid-template-columns: 8.5rem 1fr;
     gap: 28px;
   }
@@ -1452,7 +1459,7 @@
     }
   }
 
-  @media (min-width: 761px) {
+  @include bp.up(md) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     height: 292px;
   }
@@ -1554,7 +1561,7 @@
     text-align: center;
   }
 
-  @media (min-width: 761px) {
+  @include bp.up(md) {
     padding: 36px;
 
     &__panel {
@@ -1581,7 +1588,7 @@
   scroll-snap-align: start;
   scroll-snap-stop: always;
 
-  @media (min-width: 1181px) {
+  @include bp.up(lg) {
     grid-template-columns: minmax(420px, 580px) 1fr;
   }
 
@@ -1615,7 +1622,7 @@
     grid-template-columns: 1fr;
     gap: 14px;
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
@@ -1691,7 +1698,7 @@
     padding: 52px 22px;
     border-right: 1px solid rgba(38, 123, 255, 0.32);
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       padding: 54px 44px;
     }
   }
@@ -1710,7 +1717,7 @@
       object-position: center bottom;
     }
 
-    @media (min-width: 761px) {
+    @include bp.up(md) {
       min-height: 100vh;
     }
   }

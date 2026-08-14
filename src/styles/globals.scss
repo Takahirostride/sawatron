@@ -1,4 +1,5 @@
 @use "tailwindcss";
+@use "breakpoints" as bp;
 
 @use "hero-area";
 @use "content-area";
@@ -29,7 +30,7 @@ html {
   scroll-snap-type: y proximity;
   background: var(--bg);
 
-  @media (min-width: 761px) {
+  @include bp.up(md) {
     scroll-snap-type: y mandatory;
   }
 }
