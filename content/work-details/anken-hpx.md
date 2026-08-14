@@ -1,7 +1,7 @@
 ---
 slug: anken-hpx
 order: 5
-title: 教育系アプリ保守運用案件
+title: Webスクール講師案件
 category: Instructor
 period: 2024.10 - 2025.06
 team: 1名
