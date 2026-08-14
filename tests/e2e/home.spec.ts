@@ -91,6 +91,66 @@ test.describe("home page", () => {
     await expect(frame).toBeVisible();
   });
 
+  test("layers desktop navigation spheres above tiles and blur", async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== "chromium-desktop", "Desktop navigation layers");
+    await page.goto("/", { waitUntil: "domcontentloaded" });
+
+    const navigation = page.getByRole("navigation", { name: "Primary" });
+    const links = navigation.locator(".hex-link");
+    const tiles = navigation.locator(".hero__nav-tiles img");
+    const blur = navigation.locator(".hero__nav-blur");
+
+    await expect(navigation).toBeVisible();
+    await expect(links).toHaveCount(4);
+    await expect(tiles).toHaveCount(3);
+    await expect(navigation).toHaveCSS("gap", "20px");
+    await expect(blur).toHaveCSS("background-color", "rgb(0, 188, 255)");
+    await expect(blur).toHaveCSS("filter", "blur(64px)");
+    await expect(blur).toHaveCSS("opacity", "0.2");
+  });
+
+  test("keeps desktop character backgrounds covering both viewport edges", async ({
+    page,
+  }, testInfo) => {
+    test.skip(testInfo.project.name !== "chromium-desktop", "Desktop background coverage");
+    await page.goto("/", { waitUntil: "domcontentloaded" });
+
+    const backgrounds = await page.locator(".character__stage").evaluateAll((stages) =>
+      stages.map((stage) => {
+        const image = stage.querySelector<HTMLElement>(".character__bg");
+        if (!image) return null;
+
+        const stageRect = stage.getBoundingClientRect();
+        const imageRect = image.getBoundingClientRect();
+
+        return {
+          stageLeft: stageRect.left,
+          stageRight: stageRect.right,
+          imageLeft: imageRect.left,
+          imageRight: imageRect.right,
+          objectPosition: getComputedStyle(image).objectPosition,
+        };
+      }),
+    );
+
+    expect(backgrounds).toEqual([
+      {
+        stageLeft: 0,
+        stageRight: 1440,
+        imageLeft: 0,
+        imageRight: 1440,
+        objectPosition: "46% 50%",
+      },
+      {
+        stageLeft: 0,
+        stageRight: 1440,
+        imageLeft: 0,
+        imageRight: 1440,
+        objectPosition: "54% 50%",
+      },
+    ]);
+  });
+
   test("opens the matching character image from a thumbnail", async ({ page }) => {
     await page.goto("/", { waitUntil: "domcontentloaded" });
 

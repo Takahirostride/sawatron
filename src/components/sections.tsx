@@ -100,6 +100,19 @@ export function HeroSection() {
 
       {/* ②③ Navigation — metatron layer + sapphire mark */}
       <nav className="hero__nav" aria-label="Primary">
+        <div className="hero__nav-blur" aria-hidden="true" />
+        <div className="hero__nav-tiles" aria-hidden="true">
+          {navItems.slice(0, -1).map((item) => (
+            <Image
+              src="/assets/svg/orn-hexa-tiles.svg"
+              alt=""
+              width={102}
+              height={98}
+              unoptimized
+              key={`${item.href}-tiles`}
+            />
+          ))}
+        </div>
         {navItems.map((item) => (
           <a className="hex-link" href={item.href} key={item.href}>
             <Image
