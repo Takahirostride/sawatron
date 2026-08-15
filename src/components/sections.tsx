@@ -146,6 +146,20 @@ export function HeroSection() {
 export function AboutSection({ content }: { content: PortfolioContent["about"] }) {
   return (
     <section className="about light-section" id="about">
+      <video
+        className="about__background-video"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+      >
+        <source
+          src="/assets/video/Man_performing_parkour_across_ro…_202608150936.mp4"
+          type="video/mp4"
+        />
+      </video>
       <SectionCode value={content.sectionCode} dark={false} />
       <div className="section-heading section-heading--light">
         <h1>
