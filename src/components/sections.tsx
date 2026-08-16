@@ -156,7 +156,7 @@ export function AboutSection({ content }: { content: PortfolioContent["about"] }
         aria-hidden="true"
       >
         <source
-          src="/assets/video/cyberpunk-dark-hero.mp4"
+          src="/assets/video/cyberpunk-dark-hero--ph01-02.mp4"
           type="video/mp4"
         />
       </video>
