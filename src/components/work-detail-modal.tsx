@@ -280,6 +280,8 @@ export function WorkDetailModal({ works }: WorkDetailModalProps) {
       data-ready="false"
     >
       <div className="works__viewport-frame">
+        <span className="works__ornament works__ornament--start" aria-hidden="true" />
+        <span className="works__ornament works__ornament--end" aria-hidden="true" />
         <div
           className="works__viewport works__viewport--desktop"
           ref={desktopViewportRef}
@@ -287,11 +289,27 @@ export function WorkDetailModal({ works }: WorkDetailModalProps) {
         >
           <div className="works__rail" aria-label="Works list">
             {works.map((work) => (
-              <WorkCard key={work.slug} work={work} onOpen={() => setActiveSlug(work.slug)} />
+              <WorkCard
+                key={work.slug}
+                work={work}
+                onOpen={() => setActiveSlug(work.slug)}
+              />
             ))}
           </div>
         </div>
       </div>
+      {desktopPageCount > 1 ? (
+        <input
+          className="works__scrollbar"
+          type="range"
+          min={0}
+          max={desktopPageCount - 1}
+          step={1}
+          value={desktopPage}
+          aria-label="WORKSスライダー位置"
+          onChange={(event) => scrollDesktopPage(Number(event.currentTarget.value))}
+        />
+      ) : null}
       {desktopPageCount > 1 ? (
         <div className="works__pager works__pager--desktop" aria-label="Works pagination">
           <button
@@ -319,7 +337,11 @@ export function WorkDetailModal({ works }: WorkDetailModalProps) {
       <div className="works__viewport works__viewport--mobile">
         <div className="works__rail" aria-label="Works list">
           {mobileWorks.map((work) => (
-            <WorkCard key={work.slug} work={work} onOpen={() => setActiveSlug(work.slug)} />
+            <WorkCard
+              key={work.slug}
+              work={work}
+              onOpen={() => setActiveSlug(work.slug)}
+            />
           ))}
         </div>
         {pageCount > 1 ? (
@@ -352,36 +374,89 @@ export function WorkDetailModal({ works }: WorkDetailModalProps) {
   );
 }
 
-function WorkCard({ work, onOpen }: { work: WorkDetail; onOpen: () => void }) {
+function WorkCard({
+  work,
+  onOpen,
+}: {
+  work: WorkDetail;
+  onOpen: () => void;
+}) {
   const thumbnail = work.thumbnail || work.cardImage;
 
   return (
     <article className="work-card">
-      <div className="work-card__image">
-        {thumbnail ? (
-          <Image
-            src={thumbnail}
-            alt=""
-            fill
-            sizes="(max-width: 760px) 86vw, 460px"
-            unoptimized={!thumbnail.startsWith("/")}
-          />
-        ) : null}
-      </div>
+      <Image
+        className="work-card__corner work-card__corner--top"
+        src="/assets/svg/orn-corner-frame-top.svg"
+        alt=""
+        width={64}
+        height={70}
+        aria-hidden="true"
+        unoptimized
+      />
+      <Image
+        className="work-card__corner work-card__corner--bottom"
+        src="/assets/svg/orn-corner-frame-bottom.svg"
+        alt=""
+        width={64}
+        height={70}
+        aria-hidden="true"
+        unoptimized
+      />
+      <Image
+        className="work-card__corner-inner work-card__corner-inner--top"
+        src="/assets/svg/orn-corner-inframe-top.svg"
+        alt=""
+        width={8}
+        height={70}
+        aria-hidden="true"
+        unoptimized
+      />
+      <Image
+        className="work-card__corner-inner work-card__corner-inner--bottom"
+        src="/assets/svg/orn-corner-inframe-bottom.svg"
+        alt=""
+        width={8}
+        height={70}
+        aria-hidden="true"
+        unoptimized
+      />
       <div className="work-card__content">
-        <h2>{work.title}</h2>
+        <h2 className="work-card__name">{work.title}</h2>
+        <span className="work-card__diamond" aria-hidden="true" />
         <div className="work-card__meta">
           <time>{work.period}</time>
+          <span className="work-card__separator" aria-hidden="true">/</span>
           <span className="work-card__category">{work.category}</span>
+          <span className="work-card__separator" aria-hidden="true">/</span>
+          <span className="work-card__team">{work.team}</span>
         </div>
-        <p>{work.cardExcerpt}</p>
+        <div className="work-card__image">
+          {thumbnail ? (
+            <Image
+              src={thumbnail}
+              alt=""
+              fill
+              sizes="(max-width: 760px) 86vw, 600px"
+              unoptimized={!thumbnail.startsWith("/")}
+            />
+          ) : null}
+        </div>
+        <p className="work-card__excerpt">{work.cardExcerpt}</p>
         <div className="work-card__tags">
           {work.cardTags.slice(0, 6).map((tag) => (
             <span key={tag}>{tag}</span>
           ))}
         </div>
-        <button type="button" aria-label={`${work.title} の詳細`} aria-haspopup="dialog" onClick={onOpen}>
-          <ArrowUpRight size={16} />
+        <button type="button" className="work-card__button" aria-label={`${work.title} の詳細`} aria-haspopup="dialog" onClick={onOpen}>
+          <Image
+            src="/assets/base/ic-code-tag.png"
+            alt=""
+            width={30}
+            height={30}
+            aria-hidden="true"
+            unoptimized
+          />
           詳細
         </button>
       </div>
